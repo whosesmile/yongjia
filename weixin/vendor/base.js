@@ -15,7 +15,7 @@ swig.setFilter('currency', function (input, size, symbol) {
 // 根据屏幕宽度适配字体大小
 $(window).on('resize', function () {
   var width = Math.min(document.documentElement.clientWidth, 750);
-  $('html').css('font-size', (width / 750 * 32.8125) + 'px').removeClass('resize');
+  $('html').css('font-size', (width / 750 * 32.8125) + 'px').css('visibility', 'visible');
 }).triggerHandler('resize');
 
 // 加载完成后重新计算一次
@@ -26,9 +26,10 @@ $(function () {
 // IOS键盘隐藏时 触发重绘机制
 $(function () {
   $(document).on('blur', 'textarea,input[type="text"],input[type="password"],input[type="tel"],input[type="email"],input[type="number"]', function () {
+    window.scrollTo(0, window.scrollY + 1);
     setTimeout(function () {
       window.scrollTo(0, window.scrollY - 1);
-    }, 30);
+    }, 20);
   });
 });
 

@@ -1,4 +1,6 @@
 @charset "UTF-8";
+
+/* 个人主页 */
 .profile { background: #efeff4; }
 .profile .banner { position: relative; padding-top: 35px; height: 300px; background: transparent url(../images/profile/bg.jpg) 0 0 no-repeat; background-size: cover; }
 .profile .banner .figure { width: 145px; height: 145px; border: 8px solid rgba(255, 255, 255, 0.5); border-radius: 50%; overflow: hidden; }
@@ -11,11 +13,31 @@
 .profile nav .menu:nth-child(3n) { border-right: none; }
 .profile nav .menu span { display: block; margin-top: 20px; }
 .profile nav .menu .icon-plus { margin-top: 52px; }
+
+/* 我的车辆 */
 .mycar { background: #efeff4; }
-.mycar .box h3 { line-height: 80px; height: 80px; padding: 0 30px; font-weight: normal }
+.mycar .box h3 { line-height: 80px; height: 80px; padding: 0 30px; }
 .mycar .box .details { position: relative; background: #fff; height: 200px; overflow: hidden; padding-left: 260px; }
 .mycar .box .figure { position: absolute; width: 260px; height: 200px; padding: 30px; overflow: hidden; left: 0; top: 0; }
 .mycar .box .figure img { width: 100%; }
 .mycar .box .comment { display: table; padding: 0 30px; margin-top: 30px; height: 140px; border-left: 1px solid #d9d9d9; }
 .mycar .box .comment .panel { display: table-cell; vertical-align: middle; }
 .mycar .box .comment p { line-height: 1rem; }
+.mycar .box:last-child { margin-bottom: 30px; }
+
+/* 积分换礼 */
+.gift { background: #efeff4; }
+.gift .banner { height: 300px; overflow: hidden; }
+.gift .banner img { display: block; width: 100%; }
+.gift .panel { padding: 0 30px; }
+.gift .board .header { padding: 0 30px; height: 60px; line-height: 60px; overflow: hidden; }
+.gift .board .goods { float: left; width: 50%; margin-bottom: 30px; }
+.gift .board .goods:nth-child(odd) { padding-right: 15px; }
+.gift .board .goods:nth-child(even) { padding-left: 15px; }
+.gift .board .goods .wrap { border: 1px solid #dcdcdf; background-color: #fff; }
+.gift .board .goods .figure { display: block; width: 100%; height: 296px; padding: 2px; text-align: center; }
+.gift .board .goods .figure .cell { height: 100%; overflow: hidden; }
+.gift .board .goods .figure img { height: 100%; }
+.gift .board .goods .information { padding: 0 10px; line-height: 60px; }
+.gift .board .goods .information .icon-dollar { position: relative; top: -3px; }
+.gift .board .goods .information .exchange { height: 50px; line-height: 50px; font-size: 80%; border-radius: 0; }
