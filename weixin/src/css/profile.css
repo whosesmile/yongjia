@@ -41,3 +41,10 @@
 .gift .board .goods .information { padding: 0 10px; line-height: 60px; }
 .gift .board .goods .information .icon-dollar { position: relative; top: -3px; }
 .gift .board .goods .information .exchange { height: 50px; line-height: 50px; font-size: 80%; border-radius: 0; }
+
+/* 消息中心 */
+.notices { background: #efeff4; }
+.notices .item .title { width: 600px; }
+
+/* 选择车型 */
+.terms { background: #efeff4; }
