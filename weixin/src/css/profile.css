@@ -1,32 +1,33 @@
 @charset "UTF-8";
 
+/* 通用灰色背景 */
+.bg-muted { background: #efeff4; }
+nav.blocks { border-bottom: 1px solid #e6e6e6; text-align: center; }
+nav.blocks .menu { float: left; width: 33.33%; height: 250px; padding-top: 50px; border-top: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; background-color: #fff; }
+nav.blocks .menu:nth-child(3n) { border-right: none; }
+nav.blocks .menu span { display: block; margin-top: 20px; }
+nav.blocks .menu .icon-plus { margin-top: 52px; }
+
 /* 个人主页 */
-.profile { background: #efeff4; }
 .profile .banner { position: relative; padding-top: 35px; height: 300px; background: transparent url(../images/profile/bg.jpg) 0 0 no-repeat; background-size: cover; }
 .profile .banner .figure { width: 145px; height: 145px; border: 8px solid rgba(255, 255, 255, 0.5); border-radius: 50%; overflow: hidden; }
 .profile .banner .figure img { display: block; height: 100%; }
 .profile .banner .row { position: absolute; bottom: 0; width: 100%; height: 78px; padding: 12px 0; background-color: rgba(0, 0, 0, 0.3); color: #fff; text-align: center; }
 .profile .banner .row .col:first-child { border-right: 1px solid rgba(255, 255, 255, 0.5); }
 .profile .banner .row .col .icon { margin-top: -8px; }
-.profile nav { margin: 40px 0; border-bottom: 1px solid #e6e6e6; text-align: center; }
-.profile nav .menu { float: left; width: 33.33%; height: 250px; padding-top: 50px; border-top: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; background-color: #fff; }
-.profile nav .menu:nth-child(3n) { border-right: none; }
-.profile nav .menu span { display: block; margin-top: 20px; }
-.profile nav .menu .icon-plus { margin-top: 52px; }
+.profile .banner { margin-bottom: 40px; }
 
-/* 我的车辆 */
-.mycar { background: #efeff4; }
-.mycar .box h3 { line-height: 80px; height: 80px; padding: 0 30px; }
-.mycar .box .details { position: relative; background: #fff; height: 200px; overflow: hidden; padding-left: 260px; }
-.mycar .box .figure { position: absolute; width: 260px; height: 200px; padding: 30px; overflow: hidden; left: 0; top: 0; }
-.mycar .box .figure img { width: 100%; }
-.mycar .box .comment { display: table; padding: 0 30px; margin-top: 30px; height: 140px; border-left: 1px solid #d9d9d9; }
-.mycar .box .comment .panel { display: table-cell; vertical-align: middle; }
-.mycar .box .comment p { line-height: 1rem; }
-.mycar .box:last-child { margin-bottom: 30px; }
+/* 展厅 */
+.showcase .box h3 { line-height: 80px; height: 80px; padding: 0 30px; }
+.showcase .box .details { position: relative; background: #fff; height: 200px; overflow: hidden; padding-left: 260px; }
+.showcase .box .figure { position: absolute; width: 260px; height: 200px; padding: 30px; overflow: hidden; left: 0; top: 0; }
+.showcase .box .figure img { width: 100%; }
+.showcase .box .comment { display: table; padding: 0 30px; margin-top: 30px; height: 140px; border-left: 1px solid #d9d9d9; }
+.showcase .box .comment .panel { display: table-cell; vertical-align: middle; }
+.showcase .box .comment p { line-height: 1rem; }
+.showcase .box:last-child { margin-bottom: 30px; }
 
 /* 积分换礼 */
-.gift { background: #efeff4; }
 .gift .banner { height: 300px; overflow: hidden; }
 .gift .banner img { display: block; width: 100%; }
 .gift .panel { padding: 0 30px; }
@@ -43,8 +44,4 @@
 .gift .board .goods .information .exchange { height: 50px; line-height: 50px; font-size: 80%; border-radius: 0; }
 
 /* 消息中心 */
-.notices { background: #efeff4; }
 .notices .item .title { width: 600px; }
-
-/* 选择车型 */
-.terms { background: #efeff4; }

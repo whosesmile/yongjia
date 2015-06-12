@@ -3,38 +3,20 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
-    <title>我的资料</title>
+    <title>验证车主身份</title>
     <link rel="shortcut icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/profile.css"/>
   </head>
-  <body class="settings bg-muted">
+  <body class="verify bg-muted">
     <form method="post">
       <section class="has-footer">
         <div class="list">
-          <div class="item item-divider">姓名</div>
+          <div class="item item-divider">车主姓名</div>
           <div class="item item-input">
             <input type="text" placeholder="请输入您的姓名" maxlength="20" />
           </div>
-          <div class="item item-divider">出生年月</div>
-          <div class="item item-input">
-            <input type="date" placeholder="请输入您的生日" />
-          </div>
-          <div class="item item-divider">车辆使用情况</div>
-          <div class="item item-input">
-            <select>
-              <option>请选择</option>
-              <option>1辆</option>
-              <option>2辆</option>
-              <option>3辆</option>
-              <option>4辆</option>
-            </select>
-          </div>
-          <div class="item item-divider">住址</div>
-          <div class="item item-input">
-            <input type="text" placeholder="请输入您的联系地址" maxlength="50" />
-          </div>
-          <div class="item item-divider">手机号</div>
+          <div class="item item-divider">车主手机号</div>
           <div class="item item-input">
             <input type="tel" placeholder="请输入您的手机号" maxlength="11" />
           </div>
@@ -44,9 +26,8 @@
           </div>
         </div>
       </section>
-
       <footer class="bar fixed noborder bar-button">
-        <a class="button button-primary button-block">保存</a>
+        <a class="button button-primary button-block">立即验证</a>
       </footer>
     </form>
     <script src="js/base.js"></script>

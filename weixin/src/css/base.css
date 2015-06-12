@@ -79,7 +79,7 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .icon { display: inline-block; vertical-align: middle; background-size: cover; }
 .row, .flex { display: -webkit-box; display: -webkit-flex; display: flex; width: 100%; }
 .row .col, .flex .col { -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; margin: auto; display: block; width: 100%; }
-.bar { height: 103.125px; background-color: #efeff4; text-align: center; line-height: 103.125px; }
+.bar { height: 103.125px; text-align: center; line-height: 103.125px; background-color: #efeff4; }
 .bar h1 { position: absolute; top: 0; left: 0; width: 100%; font-weight: normal; padding: 0 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bar-warning { background-color: #ff6f21; color: #fff; }
 .bar .left-icon, .bar .right-icon { position: absolute; top: 0; left: 0; padding: 11.71875px 23.4375px; height: 103.125px; z-index: 20; line-height: normal; }
@@ -100,8 +100,9 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .list-padding .item:last-child > span { border-bottom: none; }
 .item-divider { display: block; background: #efeff4; height: 90px; line-height: 90px; padding: 0 30px; border-bottom: 1px solid #ddd; color: #666; }
 .item-input { display: block; border-bottom: 1px solid #dadada; height: 100px; position: relative; background: #fff; padding: 0; overflow: hidden; }
-.item-textarea { height: 140px; line-height: 1.2rem; }
-.item-input > input, .item-input > select, .item-input > textarea, .item-input > .text { width: 100%; height: 100%; border: none; padding: 0 30px; font-size: 1rem; }
+.item-input > input, .item-input > select { width: 100%; height: 100%; border: none; padding: 0 30px; font-size: 1rem; }
+.item-textarea { height: 200px; line-height: 1.2rem; padding: 0; }
+.item-textarea > textarea { width: 100%; height: 100%; border: none; padding: 15px 30px; font-size: 1rem; }
 .item-input.has-label .label { display: block; width: 210.9375px; position: absolute; left: 0; padding-left: 30px; font-size: 1rem; line-height: 101.953125px; }
 .item-input.has-label > input, .item-input.has-label > select, .item-input.has-label > textarea, .item-input.has-label > .text { width: 539.0625px; margin-left: 210.9375px; }
 .item.item-icon-left { padding-left: 95px; }
