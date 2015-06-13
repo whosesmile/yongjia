@@ -19,13 +19,13 @@ select, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -we
 select { background-color: #fff; }
 label.checkbox { line-height: 45px; }
 input[type='checkbox'] { width: 45px; height: 45px; margin: 0; line-height: normal; vertical-align: middle; position: relative; top: -5px; border: none; -webkit-appearance: none; appearance: none; background: transparent; }
-input[type='checkbox']:before { display: table; width: 100%; height: 100%; border: 1px solid #ff6f21; border-radius: 50%; background: #fff; content: ' '; transition: background-color 20ms ease-in-out; }
+input[type='checkbox']:before { display: table; width: 100%; height: 100%; border: 1px solid #f89432; border-radius: 50%; background: #fff; content: ' '; transition: background-color 20ms ease-in-out; }
 input[type='checkbox']:after { position: absolute; top: 35%; left: 25%; display: table; width: 24px; height: 12px; border: 3px solid #fff; border-top: 0; border-right: 0; content: ' '; opacity: 0; -webkit-transition: opacity 0.05s ease-in-out; -moz-transition: opacity 0.05s ease-in-out; transition: opacity 0.05s ease-in-out; -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); transform: rotate(-45deg); }
-input[type='checkbox']:checked:before { background-color: #ff6f21; }
+input[type='checkbox']:checked:before { background-color: #f89432; }
 input[type='checkbox']:checked:after { opacity: 1 }
 input[type='radio'] { width: 30px; height: 30px; margin: 0; line-height: normal; vertical-align: middle; position: relative; top: -5px; border: none; -webkit-appearance: none; appearance: none; }
-input[type='radio']:before { display: table; width: 100%; height: 100%; border: 2px solid #ff6f21; border-radius: 50%; background: #fff; content: ' '; }
-input[type='radio']:after { display: block; width: 12px; height: 12px; position: absolute; top: 50%; left: 50%; margin-top: -6px; margin-left: -6px; background-color: #ff6f21; border-radius: 50%; background: #ff6f21; content: ' '; opacity: 0; }
+input[type='radio']:before { display: table; width: 100%; height: 100%; border: 2px solid #f89432; border-radius: 50%; background: #fff; content: ' '; }
+input[type='radio']:after { display: block; width: 12px; height: 12px; position: absolute; top: 50%; left: 50%; margin-top: -6px; margin-left: -6px; background-color: #f89432; border-radius: 50%; background: #f89432; content: ' '; opacity: 0; }
 input[type='radio']:checked:after { opacity: 1 }
 input[type='checkbox'].small { -webkit-transform: scale(0.7); transform: scale(0.7); }
 input[type='checkbox'].small:before { border-width: 3px; }
@@ -46,13 +46,13 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .text-strong { color: #292f3d !important; }
 .text-stronger { color: 000 !important; }
 .text-primary { color: #005aff !important; }
-.text-warning { color: #ff6f21 !important; }
+.text-warning { color: #f89432 !important; }
 .text-danger { color: #f35050 !important; }
 .text-success { color: #5cc18b !important; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 .alert { padding: 30px; margin: 23.4375px 30px; border-radius: 9.375px; }
-.alert-warning { border: 1px solid #ff6f21; color: #ff6f21; background: #fff; }
+.alert-warning { border: 1px solid #f89432; color: #f89432; background: #fff; }
 .padding { padding: 30px; }
 .padding-horizontal { padding: 0 30px; }
 .padding-vertical { padding: 30px 0; }
@@ -81,7 +81,7 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .row .col, .flex .col { -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; margin: auto; display: block; width: 100%; }
 .bar { height: 103.125px; text-align: center; line-height: 103.125px; background-color: #efeff4; }
 .bar h1 { position: absolute; top: 0; left: 0; width: 100%; font-weight: normal; padding: 0 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.bar-warning { background-color: #ff6f21; color: #fff; }
+.bar-warning { background-color: #f89432; color: #fff; }
 .bar .left-icon, .bar .right-icon { position: absolute; top: 0; left: 0; padding: 11.71875px 23.4375px; height: 103.125px; z-index: 20; line-height: normal; }
 .bar .left-icon .icon, .bar .right-icon .icon { margin-top: 16.40625px; }
 .bar .right-icon { left: auto; right: 0; }
@@ -126,16 +126,16 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .item.item-checkbox.item-thumbnail { padding-left: 328px; }
 .item.item-checkbox.item-thumbnail .thumbnail { left: 117.1875px; }
 .tag { color: #f35050; box-shadow: 0 0 0 1px #f35050; font-size: 28px; border-radius: 5.859375px; padding: 4.6875px 9.375px; margin-right: 11.71875px; line-height: normal; }
-.button { display: inline-block; height: 90px; line-height: 90px; border: none; padding: 0 24px; margin: 0; border-radius: 10px; box-shadow: 0 0 1px #ddd; text-align: center; }
+.button { display: inline-block; height: 90px; line-height: 90px; border: none; padding: 0 24px; margin: 0; border-radius: 10px; box-shadow: 0 0 1px #ddd; text-align: center; cursor: pointer; }
 .button-block { display: block; width: 100%; }
 .button-default { background-color: #fefefe; box-shadow: 0 0 1px 1px #ddd; }
-.button-warning { color: #fff !important; background-color: #ff6f21; }
+.button-warning { color: #fff !important; background-color: #f89432; }
 .button-warning:active { box-shadow: 0 0 3px #333; background-color: #f5702c; }
 .button-outline { background-color: #fff; padding: 0 40; }
 .button-warning.button-outline { color: #fe6f21 !important; border: 1px solid #fe6f21; background: #fff9f6; }
 .button-primary { color: #fff !important; background-color: #017fff; }
 .button-primary:active { box-shadow: 0 0 3px #333; background-color: #066cd4; }
-.button .icon { float: left; margin-right: 11.71875px; }
+.button .icon { margin-right: 11.71875px; }
 .button .icon-edit { margin-top: 21.09375px; }
 .button .icon-delete { margin-top: 21.09375px; }
 .button-group .button { margin-right: 17.578125px; }
@@ -152,7 +152,7 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .counter .number { float: left; width: 84.375px; height: 50.390625px; border-width: 0 1px 0 1px; border-color: #ddd; border-style: solid; }
 .track-options { position: absolute; top: 50%; right: 30px; height: 60px; margin-top: -30px; line-height: 60px; box-shadow: inset 0 0 0 1px #dadada; border-radius: 30px; }
 .track-options > span { float: left; width: 130px; text-align: center; border-radius: 30px; cursor: default; }
-.track-options > span.active { background-color: #ff6f21; color: #fff; }
+.track-options > span.active { background-color: #f89432; color: #fff; }
 .tiny { font-size: 0.7rem; }
 .large { font-size: 1.15rem; }
 body { -webkit-user-select: none; user-select: none; }
@@ -177,10 +177,10 @@ footer.bar.noborder { box-shadow: none; }
 footer.bar nav a { float: left; width: 25%; text-align: center; font-size: 23.4375px; }
 footer.bar nav a .icon { vertical-align: top; }
 footer.bar nav span { display: block; text-align: center; margin-top: 5.859375px; color: #a3a3a3; font-size: 25.78125px; }
-footer.bar nav a:active span, footer.bar nav a.active span { color: #ff6f21; }
+footer.bar nav a:active span, footer.bar nav a.active span { color: #f89432; }
 .tabs-box { padding: 23.4375px 0; width: 100%; box-shadow: 0 0 0 1px #ddd; background-color: #fff; }
 .tabs { display: -webkit-box; display: -webkit-flex; display: flex; width: 679.6875px; height: 70.3125px; line-height: 67.96875px; margin: 0 auto; border: 1px solid #fb720e; border-radius: 9.375px; overflow: hidden; text-align: center; }
-.tabs .tab { cursor: pointer; width: 234.375px; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; display: block; color: #ff6f21; }
+.tabs .tab { cursor: pointer; width: 234.375px; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1; display: block; color: #f89432; }
 .tabs .tab.active { background-color: #fb720e; color: #fff; }
 .divider { margin: 1rem 0; text-transform: uppercase; position: relative; height: auto; overflow: hidden; line-height: 1; text-align: center; }
 .divider:after, .divider:before { position: absolute; content: ''; width: 50%; top: 50%; height: 0; border-top: 1px solid rgba(0, 0, 0, .1); border-bottom: 1px solid rgba(255, 255, 255, .2); }
