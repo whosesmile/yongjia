@@ -13,7 +13,7 @@ button, input, optgroup, select, textarea { color: inherit; font: inherit; margi
 input:focus, textarea:focus, button:focus, select:focus { outline: none !important; }
 a { color: inherit; text-decoration: none; outline: 0; }
 a:active, a:hover, a:visited { color: inherit; outline: 0; }
-a:active { background-color: #f9f9f9; }
+a.action:active { background-color: #f9f9f9; }
 img { vertical-align: middle; }
 select, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 select { background-color: #fff; }
