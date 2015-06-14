@@ -87,3 +87,6 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .myadviser .adviser .figure img { display: block; width: 100%; }
 .myadviser .actions { margin-top: 50px; }
 .myadviser .actions .button { margin-bottom: 20px; }
+
+/* 道路救援 */
+.help .tips {color: #666;line-height: 1.5rem;border-bottom: 1px solid #ddd;}
