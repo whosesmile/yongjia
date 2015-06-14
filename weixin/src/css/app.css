@@ -74,3 +74,16 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .keeper .banner { height: 300px; overflow: hidden; }
 .keeper .blocks { margin: 30px 0; }
 .keeper .blocks img { display: block; width: 100%; }
+
+/* 专属顾问 */
+.advisers .members { background: #fff; margin-top: 30px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+.advisers .members > .adviser { display: block; width: 25%; height: 250px; float: left; padding-top: 30px; }
+.advisers .members > .adviser .figure { width: 140px; height: 140px; overflow: hidden; border-radius: 50%; background-color: #fff; margin-bottom: 15px; border: 1px solid #eee; }
+.advisers .members > .adviser .figure img { display: block; width: 100%; }
+
+/* 我的顾问 */
+.myadviser .adviser { margin-top: 30px; display: block; }
+.myadviser .adviser .figure { width: 405px; height: 405px; overflow: hidden; border-radius: 50%; background-color: #fff; margin-bottom: 25px; border: 1px solid #eee; }
+.myadviser .adviser .figure img { display: block; width: 100%; }
+.myadviser .actions { margin-top: 50px; }
+.myadviser .actions .button { margin-bottom: 20px; }
