@@ -49,6 +49,7 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .gifts .board .goods .information .exchange { height: 50px; line-height: 50px; font-size: 80%; border-radius: 0; }
 
 /* 礼品详情 */
+.gift .banner { height: 420px; overflow: hidden; }
 .gift img { display: block; width: 100%; }
 .gift h3 { line-height: 90px; border-bottom: 1px solid #ddd; padding: 0 30px; }
 .gift .details { background-color: #fff; }
