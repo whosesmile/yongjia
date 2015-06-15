@@ -72,8 +72,8 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 
 /* 车管家 */
 .keeper .banner { height: 300px; overflow: hidden; }
+.keeper .banner img { display: block; width: 100%; }
 .keeper .blocks { margin: 30px 0; }
-.keeper .blocks img { display: block; width: 100%; }
 
 /* 专属顾问 */
 .advisers .members { background: #fff; margin-top: 30px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
