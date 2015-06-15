@@ -46,7 +46,7 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .text-strong { color: #292f3d !important; }
 .text-stronger { color: 000 !important; }
 .text-primary { color: #005aff !important; }
-.text-warning { color: #f89432 !important; }
+.text-warning { color: #e00c0c !important; }
 .text-danger { color: #f35050 !important; }
 .text-success { color: #5cc18b !important; }
 .text-center { text-align: center; }

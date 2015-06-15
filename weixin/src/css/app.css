@@ -104,3 +104,10 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .rescue .adviser .figure { width: 405px; height: 405px; overflow: hidden; border-radius: 50%; background-color: #fff; margin-bottom: 25px; border: 1px solid #eee; }
 .rescue .adviser .figure img { display: block; width: 100%; }
 .rescue .paragraph { line-height: 1.4rem; padding: 50px 80px; color: #666; }
+
+/* 车辆详情 */
+.details .banner { height: 420px; overflow: hidden; position: relative; }
+.details .banner img { width: 100%; display: block; }
+.details .banner .tips { position: absolute; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 10px 20px; }
+.details .name { border-bottom: 1px solid #ddd; padding: 50px 30px }
+.details .name h1 { margin-bottom: 15px; }
