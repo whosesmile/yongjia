@@ -1,0 +1,55 @@
+<div class="page-header">
+  <h1>车型参数</h1>
+</div>
+<div class="filter clearfix">
+  <div class="row">
+    <div class="col-sm-9"></div>
+    <div class="col-sm-3 text-right">
+      <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 添加</a>
+    </div>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>序列号</th>
+      <th>公众号(经销店)</th>
+      <th>车型名称</th>
+      <th>型号</th>
+      <th>参数</th>
+      <th>更新时间</th>
+      <th>社区</th>
+      <th>状态</th>
+      <th class="text-right">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="loading">
+      <td class="loading-holder" colspan="40">
+        <div class="text-center"><span class="loading"></span></div>
+      </td>
+    </tr>
+    <tr ng-if="total === 0">
+      <td colspan="40">
+        <div class="text-center">抱歉，没有相关数据</div>
+      </td>
+    </tr>
+    <tr ng-repeat="item in list">
+      <td>{{ item.name }}</td>
+      <td>{{ item.nick }}</td>
+      <td>{{ item.updateByName  }}</td>
+      <td>{{ item.roleName  }}</td>
+      <td>{{ item.mobile  }}</td>
+      <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td><a href="" ng-click="getRelation(item)"  >查看/绑定</a></td>
+      <td>{{ item.status|status }}</td>
+      <td class="text-right">
+        <a href="">停用</a>
+        <a href="">启用</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="text-right">
+  <ul class="pagination-sm" pagination ng-model="page" items-per-page="size" total-items="total" ng-change="query()"></ul>
+</div>

@@ -1,0 +1,34 @@
+<div ng-if="$loaded &amp;&amp; !$layout">
+  <div growl></div>
+  <div ui-view></div>
+</div>
+<div ng-if="$loaded &amp;&amp; $layout &amp;&amp; member">
+  <header id="header">
+    <div class="container-fluid">
+      <a href="/" class="brand link-white pull-left">
+      <img ng-src="{{ shost }}/qding/img/logo.png" class="logo" alt="永佳" />
+      永佳
+      </a>
+      <div class="settings pull-right">
+        <span class="dropdown">
+        <a class="dropdown-toggle link-white" href="">
+        <span class="text-right name">{{ member.name }}</span>
+        <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu pull-right">
+          <li><a ui-sref="settings"><i class="fa fa-cog text-muted"></i> 设置</a></li>
+          <li><a ui-sref="logout"><i class="fa fa-power-off text-muted"></i> 退出</a></li>
+        </ul>
+        </span>
+      </div>
+    </div>
+  </header>
+  <section id="content">
+    <aside class="sidebar" cs-menubar></aside>
+    <div class="main">
+      <div growl></div>
+      <div ui-view></div>
+    </div>
+  </section>
+  <footer id="footer"></footer>
+</div>
