@@ -1,0 +1,62 @@
+<div class="page-header">
+  <h1>预约记录</h1>
+</div>
+<div class="filter clearfix">
+  <div class="row">
+    <div class="col-sm-9"></div>
+    <div class="col-sm-3 text-right">
+      <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 为客户预约</a>
+    </div>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>序列号</th>
+      <th>头像</th>
+      <th>微信昵称</th>
+      <th>openId</th>
+      <th>姓名</th>
+      <th>手机号</th>
+      <th>称呼</th>
+      <th>是否车主</th>
+      <th>预约项目</th>
+      <th>车辆</th>
+      <th>预约日期</th>
+      <th>到店时间</th>
+      <th>更新时间</th>
+      <th class="text-right">状态</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-if="loading">
+      <td class="loading-holder" colspan="40">
+        <div class="text-center"><span class="loading"></span></div>
+      </td>
+    </tr>
+    <tr ng-if="total === 0">
+      <td colspan="40">
+        <div class="text-center">抱歉，没有相关数据</div>
+      </td>
+    </tr>
+    <tr ng-repeat="item in list">
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+      <td>{{ item }}</td>
+    </tr>
+  </tbody>
+</table>
+<div class="text-right">
+  <ul class="pagination-sm" pagination ng-model="page" items-per-page="size" total-items="total" ng-change="query()"></ul>
+</div>

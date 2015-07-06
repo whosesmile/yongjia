@@ -236,44 +236,47 @@ app.value('menubar', [
   {
     "name": "积分管理",
     "menus": [{
-      "sref": "#/account/member",
+      "sref": "#/integral/poll",
       "name": "积分池",
     }, {
-      "sref": "#/account/member",
+      "sref": "#/integral/project",
       "name": "积分项目",
     }, {
-      "sref": "#/account/member",
+      "sref": "#/integral/gift",
       "name": "礼品管理",
     }, {
-      "sref": "#/account/member",
+      "sref": "#/integral/exchange",
       "name": "兑换记录",
+    }, {
+      "sref": "#/integral/history",
+      "name": "积分记录",
     }, ]
   },
 
   {
     "name": "预约服务",
     "menus": [{
-      "sref": "#/account/member",
+      "sref": "#/reserve/record",
       "name": "预约记录",
     }]
   }, {
     "name": "展厅设置",
     "menus": [{
-      "sref": "#/account/member",
+      "sref": "#/showcase/goods",
       "name": "展厅设置",
     }]
   }, {
     "name": "消息管理",
     "menus": [{
-      "sref": "#/account/member",
-      "name": "咨询管理",
+      "sref": "#/message/message",
+      "name": "资讯管理",
     }]
   },
 
 ]);
 
 // 加载当前登录用户
-app.run(function ($rootScope, $state, commonService, growl, EXCLUDES, menubar) {
+app.run(function ($rootScope, $state, commonService, growl, EXCLUDES, menubar, $timeout) {
   $rootScope.$on('$initialize', function () {
     if (EXCLUDES.indexOf($state.current.name) !== -1) {
       location.href = $rootScope.next;
@@ -319,16 +322,18 @@ app.run(function ($rootScope, $state, commonService, growl, EXCLUDES, menubar) {
     };
 
     // 展开激活的分组
-    var href = $state.href($state.current.name, $state.current.params);
-    menubar.forEach(function (group) {
-      group.menus = group.menus || [];
-      group.menus.forEach(function (item) {
-        item.sref = item.sref || '';
-        if (href === item.sref.substring(item.sref.indexOf('#'))) {
-          group.active = item.active = true;
-        }
+    $timeout(function () {
+      var href = $state.href($state.current.name, $state.current.params);
+      menubar.forEach(function (group) {
+        group.menus = group.menus || [];
+        group.menus.forEach(function (item) {
+          item.sref = item.sref || '';
+          if (href === item.sref.substring(item.sref.indexOf('#'))) {
+            group.active = item.active = true;
+          }
+        });
       });
-    });
+    }, 0);
 
   });
 });
