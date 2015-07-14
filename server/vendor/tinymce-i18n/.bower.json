@@ -1,0 +1,13 @@
+{
+  "name": "tinymce-i18n",
+  "homepage": "https://github.com/whosesmile/tinymce-i18n",
+  "_release": "162852556b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "162852556b7d930eba2876797516321210fbe81e"
+  },
+  "_source": "https://github.com/whosesmile/tinymce-i18n.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/whosesmile/tinymce-i18n.git"
+}

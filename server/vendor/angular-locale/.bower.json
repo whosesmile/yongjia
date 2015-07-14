@@ -1,0 +1,13 @@
+{
+  "name": "angular-locale",
+  "homepage": "https://github.com/whosesmile/angular-locale",
+  "_release": "03629e5967",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "03629e596737b692ad1efbe94916c3696e946712"
+  },
+  "_source": "https://github.com/whosesmile/angular-locale.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/whosesmile/angular-locale.git"
+}

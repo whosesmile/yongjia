@@ -184,7 +184,8 @@ app.constant('EXCLUDES', ['login', 'logout']);
 app.run(function ($rootScope) {
   var temp = document.createElement('a');
   temp.setAttribute('href', document.querySelector('link[rel="stylesheet"]').getAttribute('href'));
-  $rootScope.shost = temp.protocol + '//' + temp.host;
+  // $rootScope.shost = temp.protocol + '//' + temp.host;
+  $rootScope.shost = '';
 });
 
 // 重定向到登录

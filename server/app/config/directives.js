@@ -17,10 +17,10 @@ app.directive('csLayout', function ($rootScope, EXCLUDES) {
         element.attr('class', hyphenate(state.name)).toggleClass('layout', $rootScope.$layout).removeAttr('style');
 
         // 更换图纸 目前有15张
-        if (state.name === 'login') {
-          var num = Math.ceil(Math.random(0, 1) * 15);
-          element.attr('style', 'background-image:url(' + $rootScope.shost + '/public/wallpaper/' + num + '.jpg)');
-        }
+        // if (state.name === 'login') {
+        //   var num = Math.ceil(Math.random(0, 1) * 15);
+        //   element.attr('style', 'background-image:url(' + $rootScope.shost + '/public/wallpaper/' + num + '.jpg)');
+        // }
 
         // 开始初始化
         if ($rootScope.$layout && !$rootScope.member) {

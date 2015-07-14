@@ -88,8 +88,8 @@ th, td { vertical-align: middle !important; }
 /* --- */
 body { overflow: hidden; }
 body.layout { background: #fff url(vendor/images/sider.png) 0 0 repeat-y; overflow-y: scroll; min-width: 1200px; overflow-x: auto; }
-body.login { background: transparent url() center bottom no-repeat; background-attachment: fixed; background-size: cover; overflow: hidden !important; }
-body.welcome img.welcome { display: block; margin: 140px auto 0; }
+body.login { background: transparent url(vendor/images/bg.jpg) center bottom no-repeat; background-attachment: fixed; background-size: cover; overflow: hidden !important; }
+body.welcome img.welcome { display: block; margin: 140px auto 0; width: 300px; }
 #header { position: fixed; top: 0; left: 0; right: 0; height: 42px; color: #fff; z-index: 10; font-size: 13px; box-shadow: 0 1px 2px rgba(0, 0, 0, .35); background-color: #4DAEDB; }
 #header .logo { width: 30px; }
 #header .brand { padding: 7px 0 0; text-decoration: none; color: #fff; font-size: 18px; }
