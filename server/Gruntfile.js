@@ -238,10 +238,12 @@ module.exports = function (grunt) {
     grunt.config('config.folder', 'dist');
     grunt.task.run([
       'clean:dev',
-      'copy:dev',
+      'copy',
       'cssmin:dev',
       'html2js:dev',
       'ngAnnotate:dev',
+      'concat',
+      'uglify',
     ]);
   });
 
