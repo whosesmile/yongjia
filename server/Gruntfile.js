@@ -85,26 +85,19 @@ module.exports = function (grunt) {
       }
     },
 
+    concat: {
+      alljs: {
+        src: ['app/app.js', 'app/config/supports.js', 'app/config/config.js', 'app/config/**/*.js', 'app/modules/**/module.js', 'app/modules/**/*.js', 'app/templates.js'],
+        dest: '<%= config.folder %>/app.min.js'
+      }
+    },
+
     ngAnnotate: {
       options: {
         singleQuotes: true
       },
       dev: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.folder %>',
-          src: '**/*.js',
-          dest: '<%= config.folder %>'
-        }]
-      }
-    },
-
-    concat: {
-      options: {
-        stripBanners: true
-      },
-      alljs: {
-        src: ['app/app.js', 'app/config/supports.js', 'app/config/config.js', 'app/config/**/*.js', 'app/modules/**/module.js', 'app/modules/**/*.js', 'app/templates.js'],
+        src: '<%= config.folder %>/app.min.js',
         dest: '<%= config.folder %>/app.min.js'
       }
     },
@@ -115,7 +108,7 @@ module.exports = function (grunt) {
         enclose: {}
       },
       alljs: {
-        src: '<%= concat.alljs.dest %>',
+        src: '<%= config.folder %>/app.min.js',
         dest: '<%= config.folder %>/app.min.js'
       }
     },
@@ -241,8 +234,8 @@ module.exports = function (grunt) {
       'copy',
       'cssmin:dev',
       'html2js:dev',
-      'ngAnnotate:dev',
       'concat',
+      'ngAnnotate',
       'uglify',
     ]);
   });
