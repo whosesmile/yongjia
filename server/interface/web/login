@@ -1,0 +1,20 @@
+{
+  "data": {
+    "message": "success",
+    "entity": {
+      "id": 1,
+      "name": "admin",
+      "mobile": null,
+      "workNo": null,
+      "account": "admin",
+      "pwd": "e10adc3949ba59abbe56e057f20f883e",
+      "roleId": 1,
+      "status": 1,
+      "createBy": 1,
+      "createAt": 1,
+      "updateBy": 1,
+      "updateAt": 1
+    }
+  },
+  "code": 200
+}

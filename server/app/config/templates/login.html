@@ -8,13 +8,13 @@
       </div>
 
       <div class="form-group">
-        <div class="input-group" ng-class="{'ng-dirty': form.name.$dirty, 'ng-valid': form.name.$valid, 'ng-invalid': form.name.$invalid}">
+        <div class="input-group" ng-class="{'ng-dirty': form.account.$dirty, 'ng-valid': form.account.$valid, 'ng-invalid': form.account.$invalid}">
           <div class="input-group-addon">
             <i class="fa fa-envelope"></i>
           </div>
-          <input class="form-control" type="text" placeholder="账号" name="name" ng-model="name" cs-autofill autofocus required />
+          <input class="form-control" type="text" placeholder="账号" name="account" ng-model="account" cs-autofill autofocus required />
         </div>
-        <p class="text-danger" ng-if="form.name.$dirty &amp;&amp; form.name.$invalid"><i class="fa fa-exclamation-circle"></i> 请输入您的账号</p>
+        <p class="text-danger" ng-if="form.account.$dirty &amp;&amp; form.account.$invalid"><i class="fa fa-exclamation-circle"></i> 请输入您的账号</p>
       </div>
       <div class="form-group">
         <div class="input-group" ng-class="{'ng-dirty': form.pwd.$dirty, 'ng-valid': form.pwd.$valid, 'ng-invalid': form.pwd.$invalid}">

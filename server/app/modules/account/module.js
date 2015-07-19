@@ -22,11 +22,6 @@ accountModule.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "modules/account/templates/manager.html",
       controller: 'managerController'
     })
-    .state('account.seller', {
-      url: '/seller',
-      templateUrl: "modules/account/templates/seller.html",
-      controller: 'sellerController'
-    })
     .state('account.visitor', {
       url: '/visitor',
       templateUrl: "modules/account/templates/visitor.html",

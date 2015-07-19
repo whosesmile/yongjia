@@ -1,46 +1,36 @@
 // 通用
 app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
   return {
-    get: function (url, params) {
+    login: function (account, pwd) {
       return $http({
-        url: url,
-        params: params
-      });
-    },
-    login: function (name, pwd, remember) {
-      return $http({
-        url: '/user/web/home/login.json',
+        url: '/web/login',
         method: 'post',
         data: {
-          name: name,
-          pwd: pwd,
-          remember: remember
+          account: account,
+          pwd: pwd
         }
       });
     },
 
     logout: function () {
       return $http({
-        url: '/user/web/home/logout.json',
-        method: 'post'
+        url: '/web/logout'
       });
     },
 
     loadUser: function () {
       return $http({
-        url: '/user/web/home/getcpuser.json'
+        url: '/web/getUser'
       });
     },
 
-    changePwd: function (oldPwd, newPwd, id) {
+    changePwd: function (oldPwd, newPwd) {
       return $http({
-        //url: '/user/web/puser/updatePassword.json',
-        url: '/user/web/home/modifyPassword.json',
+        url: '/web/modifyPwd',
         method: 'post',
         data: {
           oldPwd: oldPwd,
-          newPwd: newPwd,
-          puserId: id
+          newPwd: newPwd
         }
       });
     },
@@ -55,26 +45,6 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
         file: file
       }).then(function (res) {
         deferred.resolve(res.message);
-        growl.addSuccessMessage('上传成功');
-      }, function (rej) {
-        growl.addErrorMessage(rej.message || '上传失败');
-        deferred.reject(rej);
-      }, function (e) {
-        growl.addInfoMessage('正在上传：' + parseInt(100 * e.loaded / e.total, 10));
-      });
-      return deferred.promise;
-    },
-
-    // 仅支持上传单一文件
-    upload2qiniu: function ($files, width, height) {
-      var deferred = $q.defer();
-      var file = $files[0];
-      $injector.get('$upload').upload({
-        url: '/sysConfig/admin/upload/imageUpload',
-        method: 'POST',
-        file: file
-      }).then(function (res) {
-        deferred.resolve(res.imageKey);
         growl.addSuccessMessage('上传成功');
       }, function (rej) {
         growl.addErrorMessage(rej.message || '上传失败');
@@ -211,8 +181,8 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
      * updateTemplate: '编辑实体的模板地址'
      */
 
-    $scope.page = 1;
-    $scope.size = 20;
+    $scope.pageNo = 1;
+    $scope.pageSize = 20;
     $scope.total = 0;
 
     $scope.query = function query(arg) {
@@ -223,17 +193,15 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
       }
       // 添加额外参数 注：如果arg是boolean 此处不会影响
       var params = angular.extend({
-        page: $scope.page,
-        size: $scope.size,
-        fid: $scope.fid
+        pageNo: $scope.pageNo,
+        pageSize: $scope.pageSize,
       }, arg, $scope.searchParams && $scope.searchParams());
 
       return service.query(params).then(function (res) {
         $scope.list = res.list;
-        $scope.page = res.page;
-        $scope.size = res.size;
+        $scope.pageNo = res.pageNo;
+        $scope.pageSize = res.pageSize;
         $scope.total = res.total;
-        $scope.fid = res.fid;
         return $q.when(res);
       }, function (rej) {
         growl.addErrorMessage(rej.message || '服务器异常，请稍后再试！');
@@ -283,10 +251,10 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
             scope.entity = {};
 
             scope.confirm = function () {
-              scope.entity.creating = true;
+              scope.entity.processing = true;
 
               service.create(scope.entity).then(function (res) {
-                $scope.page = 1;
+                $scope.pageNo = 1;
                 $scope.query();
                 growl.addSuccessMessage(scope.title + '成功！');
                 scope.$close();
@@ -295,7 +263,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
                 growl.addErrorMessage(rej.message || scope.title + '失败！');
                 return $q.reject(rej);
               })['finally'](function () {
-                scope.entity.creating = false;
+                scope.entity.processing = false;
               });
             };
 
@@ -319,9 +287,10 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
             scope.entity = angular.copy(entity);
 
             scope.confirm = function () {
-              scope.entity.updating = true;
+              scope.entity.processing = true;
 
               service.update(scope.entity).then(function (res) {
+                delete scope.entity.processing;
                 angular.extend(entity, res.entity || scope.entity);
                 growl.addSuccessMessage(scope.title + '成功!');
                 scope.$close();
@@ -331,7 +300,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
                 growl.addErrorMessage(rej.message || scope.title + '失败！');
                 return $q.reject(rej);
               })['finally'](function () {
-                scope.entity.updating = false;
+                scope.entity.processing = false;
               });
             };
 
@@ -353,7 +322,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
             scope.entity = entity;
             scope.message = '<h5>您确定要删除' + config.title + ' ( <span class="text-warning">' + entity[config.property || 'name'] + '</span> ) 吗？</h5>';
             scope.confirm = function () {
-              scope.entity.deleting = true;
+              scope.entity.processing = true;
 
               service.remove(entity).then(function (res) {
                 $scope.total -= 1;
@@ -368,7 +337,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
               }, function (rej) {
                 growl.addErrorMessage(rej.message || scope.title + '失败！');
               })['finally'](function () {
-                scope.entity.deleting = false;
+                scope.entity.processing = false;
               });
               scope.$close();
             };

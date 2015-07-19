@@ -3,6 +3,7 @@ select, textarea, optgroup, input, option, button { font-family: inherit; }
 input[type='password'] { font-family: sans-serif; }
 .form-inline .control-label { padding-top: 7px; }
 .form-group:after { content: ""; display: block; height: 0; overflow: hidden; clear: both; }
+*:focus { outline: none; }
 
 /* angular */
 input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty { border-color: #5cb85c; }
@@ -157,3 +158,5 @@ form .group-title { font-size: 16px; border-left: 3px solid #ff8800; padding-lef
 .selected-project em:hover { background: #e64418; color: #fff; }
 .label-text { padding: 7px; margin-right: 60px; }
 .bg-info { padding: 10px; border-radius: 5px; overflow: hidden; }
+td.actions a:not(:last-child) { position: relative; margin-right: 13px; }
+td.actions a:not(:last-child):after { position: absolute; content: '|'; color: #eee; top: 0; right: -10px; }

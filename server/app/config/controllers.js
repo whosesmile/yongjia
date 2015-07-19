@@ -1,19 +1,17 @@
 app.controller('loginController', function ($window, $scope, $state, growl, commonService) {
   $scope.remember = false;
-  $scope.login = function (name, pwd) {
+  $scope.login = function (account, pwd) {
     $scope.processing = true;
 
-    $scope.$emit('$initialize');
-    $state.go('welcome');
-    // commonService.login($scope.name, $scope.pwd, $scope.remember).then(function (res) {
-    //   $scope.$emit('$initialize');
-    //   $state.go('welcome');
-    // }, function (rej) {
-    //   $scope.error = true;
-    //   $scope.message = rej.message;
-    // })['finally'](function () {
-    //   $scope.processing = false;
-    // });
+    commonService.login($scope.account, $scope.pwd).then(function (res) {
+      $scope.$emit('$initialize');
+      $state.go('welcome');
+    }, function (rej) {
+      $scope.error = true;
+      $scope.message = rej.message;
+    })['finally'](function () {
+      $scope.processing = false;
+    });
   };
 
   if (!(/chrome/i.test($window.navigator.userAgent))) {

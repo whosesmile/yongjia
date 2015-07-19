@@ -1,14 +1,23 @@
-accountModule.factory('memberService', function (serviceGenerator, $http) {
+accountModule.factory('managerService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
-    query: '1',
-    create: '1',
-    update: '1',
-    remove: '1',
-    toggle: '1',
+    query: '/web/user/list',
+    create: '/web/user/add',
+    update: '/web/user/update',
+    toggle: '/web/user/toggle',
+  }).methods({
+    resetPwd: function (id) {
+      return $http({
+        url: '/web/user/resetPwd',
+        method: 'post',
+        data: {
+          userId: id
+        }
+      });
+    }
   });
 });
 
-accountModule.factory('managerService', function (serviceGenerator, $http) {
+accountModule.factory('memberService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
     query: '1',
     create: '1',

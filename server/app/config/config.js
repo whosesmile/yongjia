@@ -185,6 +185,19 @@ app.run(function ($rootScope) {
   var temp = document.createElement('a');
   temp.setAttribute('href', document.querySelector('link[rel="stylesheet"]').getAttribute('href'));
   $rootScope.shost = temp.protocol + '//' + temp.host;
+  $rootScope.roles = [{
+    id: 1,
+    name: '管理员'
+  }, {
+    id: 2,
+    name: '主管'
+  }, {
+    id: 3,
+    name: '客服'
+  }, {
+    id: 4,
+    name: '销售'
+  }];
 });
 
 // 重定向到登录
@@ -220,10 +233,7 @@ app.value('menubar', [
     "name": "用户管理",
     "menus": [{
       "sref": "#/account/manager",
-      "name": "管理员",
-    }, {
-      "sref": "#/account/seller",
-      "name": "销售顾问",
+      "name": "平台用户",
     }, {
       "sref": "#/account/member",
       "name": "微信用户",
@@ -282,44 +292,12 @@ app.run(function ($rootScope, $state, commonService, growl, EXCLUDES, menubar, $
       location.href = $rootScope.next;
     }
 
-    // commonService.loadUser().then(function (res) {
-    //   $rootScope.member = res.entity.puser;
-    //   $rootScope.memberProject = res.entity.projectIds;
-    //   $rootScope.memberMenu = res.entity.userMenu;
-
-    //   if (res.entity.userMenu.length === 0 || res.entity.projectIds === "") {
-    //     if (res.entity.userMenu.length === 0) {
-    //       growl.addErrorMessage('您暂时没有可操作或者有权限的菜单，请联系管理员或者重新登陆！');
-    //     }
-    //     else {
-    //       growl.addErrorMessage("您暂时没有任何数据权限，请联系管理员或者重新登陆！");
-    //     }
-    //     $state.go('noauth');
-    //   }
-
-    //   // 给menubar赋值
-    //   Array.prototype.splice.apply(menubar, [0, menubar.length].concat(res.entity.userMenu));
-    //   // 展开激活的分组
-    //   var href = $state.href($state.current.name, $state.current.params);
-    //   menubar.forEach(function (group) {
-    //     group.menus = group.menus || [];
-    //     group.menus.forEach(function (item) {
-    //       item.sref = item.sref || '';
-    //       if (href === item.sref.substring(item.sref.indexOf('#'))) {
-    //         group.active = item.active = true;
-    //       }
-    //     });
-    //   });
-
-    // }, function (rej) {
-    //   $rootScope.$emit('loginRequired');
-    //   $state.go('login');
-    // });
-
-    // TODO
-    $rootScope.member = {
-      name: '李小苗'
-    };
+    commonService.loadUser().then(function (res) {
+      $rootScope.member = res.entity;
+    }, function (rej) {
+      $rootScope.$emit('loginRequired');
+      $state.go('login');
+    });
 
     // 展开激活的分组
     $timeout(function () {

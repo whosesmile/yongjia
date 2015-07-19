@@ -10,15 +10,15 @@
       永佳管理后台
       </a>
       <div class="settings pull-right">
-        <span class="dropdown">
-        <a class="dropdown-toggle link-white" href="">
-        <span class="text-right name">{{ member.name }}</span>
-        <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu pull-right">
-          <li><a ui-sref="settings"><i class="fa fa-cog text-muted"></i> 设置</a></li>
-          <li><a ui-sref="logout"><i class="fa fa-power-off text-muted"></i> 退出</a></li>
-        </ul>
+        <span class="dropdown" dropdown>
+          <a class="dropdown-toggle link-white" href="" dropdown-toggle>
+            <span class="text-right name">{{ member.name }}</span>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu pull-right">
+            <li><a ui-sref="profile"><i class="fa fa-cog text-muted"></i> 设置</a></li>
+            <li><a ui-sref="logout"><i class="fa fa-power-off text-muted"></i> 退出</a></li>
+          </ul>
         </span>
       </div>
     </div>
@@ -32,3 +32,5 @@
   </section>
   <footer id="footer"></footer>
 </div>
+
+

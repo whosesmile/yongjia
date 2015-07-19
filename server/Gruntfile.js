@@ -1,11 +1,7 @@
 /* global module:false, require:true, __dirname:true */
 
 var rules = [
-  [/(\/\w+\/)+\w*\.jsp/, '/index.html'],
-  [/\/(\w+)\/$/, '/index.html'],
-  [/\w+?\/img/, '/img/'],
-  [/^\/account/, '/interface/account/'],
-  [/^\/user\/web\/puser\/(\w+).json/, '/interface/account/$1.json']
+  [/^\/web/, '/interface/web/'],
 ];
 
 var rewrite = function (url) {
