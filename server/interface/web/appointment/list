@@ -1,0 +1,23 @@
+{
+  "data": {
+    "message": "success",
+    "list": [{
+      "id": 1,
+      "type": 2,
+      "carType": "奥迪",
+      "connectPhone": "18511896713",
+      "problemDesc": "",
+      "kilo": "1000",
+      "isTestDrive": 2,
+      "appointTime": 1436844208693,
+      "arriveTime": null,
+      "status": 0,
+      "createAt": null,
+      "createBy": null,
+      "updateAt": null,
+      "updateBy": null,
+      "appointContent": ""
+    }]
+  },
+  "code": 200
+}

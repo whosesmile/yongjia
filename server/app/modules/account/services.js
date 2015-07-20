@@ -19,7 +19,7 @@ accountModule.factory('managerService', function (serviceGenerator, $http) {
 
 accountModule.factory('memberService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
-    query: '1',
+    query: '/web/wxuser/list',
     create: '1',
     update: '1',
     remove: '1',

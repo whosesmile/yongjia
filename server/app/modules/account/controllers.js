@@ -30,6 +30,12 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
     updateTemplate: 'modules/account/templates/partial/update-user-form.html',
     autoload: true
   });
+
+  $scope.params = {};
+
+  $scope.searchParams = function () {
+    return $scope.params;
+  };
 });
 
 accountModule.controller('visitorController', function ($scope, $state, $modal, growl, visitorService, controllerGenerator, $q) {
