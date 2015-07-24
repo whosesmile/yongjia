@@ -26,8 +26,6 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
   controllerGenerator($scope, memberService, {
     title: '微信用户',
     property: 'name',
-    createTemplate: 'modules/account/templates/partial/create-user-form.html',
-    updateTemplate: 'modules/account/templates/partial/update-user-form.html',
     autoload: true
   });
 
@@ -35,6 +33,52 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
 
   $scope.searchParams = function () {
     return $scope.params;
+  };
+
+  // 查看用户车辆
+  $scope.getMemberCar = function (member) {
+    memberService.getMemberCar(member.id).then(function (data) {
+      $modal.open({
+        templateUrl: 'modules/account/templates/partial/membercars.html',
+        controller: ['$scope',
+          function (scope) {
+            scope.list = data.entity;
+          }
+        ]
+      });
+    });
+  };
+
+  // 验证用户车辆
+  $scope.checkMemberCar = function (member) {
+    memberService.getMemberCar(member.id).then(function (data) {
+      $modal.open({
+        templateUrl: 'modules/account/templates/partial/verifycar.html',
+        controller: ['$scope',
+          function (scope) {
+            scope.list = data.entity.filter(function (item) {
+              return item.status === 0;
+            });
+
+            scope.confirm = function (item) {
+              memberService.passMemberCar(item.id).then(function (data) {
+                member.valiFlag = null;
+                growl.addSuccessMessage('已经通过验证');
+                scope.$dismiss();
+              });
+            };
+
+            scope.failure = function (item) {
+              memberService.nopassMemberCar(item.id).then(function (data) {
+                member.valiFlag = null;
+                growl.addSuccessMessage('已经否决验证');
+                scope.$dismiss();
+              });
+            };
+          }
+        ]
+      });
+    });
   };
 });
 

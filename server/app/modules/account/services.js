@@ -10,7 +10,7 @@ accountModule.factory('managerService', function (serviceGenerator, $http) {
         url: '/web/user/resetPwd',
         method: 'post',
         data: {
-          userId: id
+          id: id
         }
       });
     }
@@ -24,7 +24,33 @@ accountModule.factory('memberService', function (serviceGenerator, $http) {
     update: '1',
     remove: '1',
     toggle: '1',
+  }).methods({
+    getMemberCar: function (id) {
+      return $http({
+        url: '/web/wxuser/getMemberCar',
+        params: {
+          memberId: id
+        }
+      });
+    },
+    passMemberCar: function (id) {
+      return $http({
+        url: '/web/wxuser/passMemberCar',
+        params: {
+          memberCarId: id
+        }
+      });
+    },
+    nopassMemberCar: function (id) {
+      return $http({
+        url: '/web/wxuser/nopassMemberCar',
+        params: {
+          memberCarId: id
+        }
+      });
+    },
   });
+
 });
 
 accountModule.factory('visitorService', function (serviceGenerator, $http) {

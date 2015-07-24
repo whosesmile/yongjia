@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">车辆信息</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>NO.</th>
+        <th>车款</th>
+        <th>型号</th>
+        <th>vin-no</th>
+        <th>车牌</th>
+        <th class="text-right">状态</th>
+      </tr>
+      <tr ng-repeat="item in list">
+        <td>{{ item.id }}</td>
+        <td>{{ item.typeName }}</td>
+        <td>{{ item.modelName }}</td>
+        <td>{{ item.vinNo }}</td>
+        <td>{{ item.carNumber }}</td>
+        <td class="actions text-right">{{ item.status|memberCarStatus }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

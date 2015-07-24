@@ -1,0 +1,43 @@
+{
+  "data": {
+    "message": "success",
+    "entity": [{
+      "id": 1,
+      "memberId": 2,
+      "typeName": "奥迪",
+      "modelName": "奥迪2015",
+      "vinNo": "",
+      "carNumber": "京A123456",
+      "status": 0,
+      "createAt": null,
+      "createBy": null,
+      "updateAt": null,
+      "updateBy": null
+    }, {
+      "id": 2,
+      "memberId": 2,
+      "typeName": "奥迪2",
+      "modelName": "奥迪2015",
+      "vinNo": "",
+      "carNumber": "京A123452",
+      "status": 1,
+      "createAt": null,
+      "createBy": null,
+      "updateAt": null,
+      "updateBy": null
+    }, {
+      "id": 3,
+      "memberId": 2,
+      "typeName": "奥迪3",
+      "modelName": "奥迪2015",
+      "vinNo": "",
+      "carNumber": "京A123452",
+      "status": 2,
+      "createAt": null,
+      "createBy": null,
+      "updateAt": null,
+      "updateBy": null
+    }]
+  },
+  "code": 200
+}

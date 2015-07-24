@@ -7,11 +7,11 @@
       <form class="form-inline" ng-submit="query()">
         <div class="form-group mb10 mr10">
           <label class="control-label text-normal text-nowrap">姓名：</label>
-          <input type="text" class="form-control" placeholder="请输入姓名" ng-model="name" />
+          <input type="text" class="form-control" placeholder="请输入姓名" ng-model="params.name" />
         </div>
         <div class="form-group mb10 mr10">
           <label class="control-label text-normal text-nowrap">手机号：</label>
-          <input type="tel" class="form-control" placeholder="请输入手机" ng-model="mobile" />
+          <input type="tel" class="form-control" placeholder="请输入手机" ng-model="params.mobile" />
         </div>
         <div class="mb10 mr10">
           <button type="submit" class="btn btn-primary ml10" ng-disabled="form.$invalid">
@@ -34,7 +34,6 @@
       <th>车型</th>
       <th>关注状态</th>
       <th>绑定状态</th>
-      <th>更新时间</th>
       <th>操作</th>
     </tr>
   </thead>
@@ -56,14 +55,15 @@
       <td>{{ item.name }}</td>      
       <td>{{ item.mobile }}</td>
       <td>{{ item.sex|gender }}</td>
-      <td><a href="">查看</a></td>      
-      <td>{{ item.b }}</td>
-      <td>{{ item.c }}</td>
-      <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
-      <td><a href="">验证</a></td>
+      <td ng-if="!item.id || item.status != 2"><a class="text-muted">查看</a></td>      
+      <td ng-if="item.id &amp;&amp; item.status == 2"><a href="" ng-click="getMemberCar(item)">查看</a></td>      
+      <td>{{ item.subscribe|memberFollow }}</td>
+      <td>{{ item.id|memberBind:item.status }}</td>
+      <td ng-if="item.valiFlag != 1"><a class="text-muted">验证</a></td>
+      <td ng-if="item.valiFlag == 1"><a href="" ng-click="checkMemberCar(item)">验证</a></td>
     </tr>
   </tbody>
 </table>
 <div class="text-right">
-  <ul class="pagination-sm" pagination ng-model="pageNo" items-per-page="pageSize" total-items="total" ng-change="query()"></ul>
+  <ul class="pagination-sm" pagination ng-model="pageNo" items-per-page="pageSize" total-items="totalCount" ng-change="query()"></ul>
 </div>

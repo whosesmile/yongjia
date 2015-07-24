@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">待验证车辆</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>NO.</th>
+        <th>车款</th>
+        <th>型号</th>
+        <th>vin-no</th>
+        <th>车牌</th>
+        <th class="text-right">操作</th>
+      </tr>
+      <tr ng-repeat="item in list">
+        <td>{{ item.id }}</td>
+        <td>{{ item.typeName }}</td>
+        <td>{{ item.modelName }}</td>
+        <td>{{ item.vinNo }}</td>
+        <td>{{ item.carNumber }}</td>
+        <td class="actions text-right">
+          <a href="" ng-click="confirm(item)">通过</a>
+          <a href="" ng-click="failure(item)" class="text-danger">忽略</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

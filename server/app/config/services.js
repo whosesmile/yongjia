@@ -20,7 +20,7 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
 
     loadUser: function () {
       return $http({
-        url: '/web/getUser'
+        url: '/web/getCurrentUser'
       });
     },
 
@@ -29,8 +29,8 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
         url: '/web/modifyPwd',
         method: 'post',
         data: {
-          oldPwd: oldPwd,
-          newPwd: newPwd
+          oldpwd: oldPwd,
+          newpwd: newPwd
         }
       });
     },
@@ -183,7 +183,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
 
     $scope.pageNo = 1;
     $scope.pageSize = 20;
-    $scope.total = 0;
+    $scope.totalCount = 0;
 
     $scope.query = function query(arg) {
       // 删除之后到达阈值后会做静默翻页 防止页面出现空页面
@@ -201,7 +201,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
         $scope.list = res.list;
         $scope.pageNo = res.pageNo;
         $scope.pageSize = res.pageSize;
-        $scope.total = res.total;
+        $scope.totalCount = res.totalCount;
         return $q.when(res);
       }, function (rej) {
         growl.addErrorMessage(rej.message || '服务器异常，请稍后再试！');
@@ -325,7 +325,7 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
               scope.entity.processing = true;
 
               service.remove(entity).then(function (res) {
-                $scope.total -= 1;
+                $scope.totalCount -= 1;
                 $scope.list.splice($scope.list.indexOf(entity), 1);
 
                 // 阈值为 2/3，小于会自动reload当前页

@@ -4,6 +4,14 @@ input[type='password'] { font-family: sans-serif; }
 .form-inline .control-label { padding-top: 7px; }
 .form-group:after { content: ""; display: block; height: 0; overflow: hidden; clear: both; }
 *:focus { outline: none; }
+.text-lighter { color: #eee !important; }
+.text-gray { color: #666 !important; }
+.text-muted { color: #999 !important; }
+.text-primary { color: #248be4 !important; }
+.text-success { color: #4db118 !important; }
+.text-info { color: #5bc0de !important; }
+.text-warning { color: #f49700 !important; }
+.text-danger { color: #e64418 !important; }
 
 /* angular */
 input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty { border-color: #5cb85c; }
@@ -140,6 +148,7 @@ body.welcome img.welcome { display: block; margin: 140px auto 0; width: 300px; }
 #login .content .form-group { margin-bottom: 25px; }
 #noauth { display: block; margin: 140px auto 0; }
 .modal-body .tag { display: inline-block; padding: 3px 5px; border: 1px solid #ccc; border-radius: 3px; cursor: default; }
+.modal-body .table th { border-top: none; }
 form .group-title-wrap { border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 20px; }
 form .group-title { font-size: 16px; border-left: 3px solid #ff8800; padding-left: 10px; }
 .as-sortable-item, .as-sortable-placeholder { display: block }

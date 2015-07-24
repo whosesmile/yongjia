@@ -25,7 +25,7 @@
     <div class="form-group" ng-class="{'ng-dirty': form.mobile.$dirty, 'ng-valid': form.mobile.$valid, 'ng-invalid': form.mobile.$invalid}">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>手机：</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" placeholder="请输入手机" ng-model="entity.mobile" name="mobile" required  />
+        <input type="tel" class="form-control" placeholder="请输入手机" ng-model="entity.mobile" name="mobile" required  maxlength="11" />
       </div>
     </div>
     <div class="form-group " ng-class="{'ng-dirty': form.roleId.$dirty, 'ng-valid': form.roleId.$valid, 'ng-invalid': form.roleId.$invalid}">
