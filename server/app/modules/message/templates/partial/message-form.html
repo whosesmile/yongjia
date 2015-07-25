@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <form class="form-horizontal" name="form">
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>资讯标题：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="请输入资讯标题" ng-model="entity.name" name="name" autofocus required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>资讯摘要：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="请输入资讯摘要" ng-model="entity.descipition" name="descipition" autofocus required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>资讯头图：</label>
+      <div class="col-sm-7">
+        <div class="upload">
+          <a class="btn btn-success">+上传资讯头图</a>
+          <input type="file" class="file" ng-file-select="upload($files)" accept="image/*" />
+        </div>
+      </div>
+      <div class="col-sm-offset-3 col-sm-7" ng-if="entity.pic">
+        <img ng-src="{{ entity.pic }}" class="preimg" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>资讯内容：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="请输入资讯内容" ng-model="entity.content" name="content" required />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing">
+  <span ng-if="!entity.processing">确定</span>
+  <span ng-if="entity.processing">处理中...</span>
+  </button>
+  <button class="btn btn-default" ng-click="$dismiss()">取消</button>
+</div>

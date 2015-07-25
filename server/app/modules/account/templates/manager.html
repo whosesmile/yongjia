@@ -57,7 +57,7 @@
       <td ng-class="{'text-danger': item.status}">{{ item.status|memberStatus }}</td>
       <td class="actions text-right" ng-if="member.roleId === 1">
         <a href="" class="text-danger" ng-if="item.status === 0" ng-click="toggle(item)">停用</a>
-        <a href="" class="text-success" ng-if="item.status === 1" ng-click="toggle(item)">启用</a>
+        <a href="" ng-if="item.status === 1" ng-click="toggle(item)">启用</a>
         <a href="" ng-click="resetPwd(item)">重置密码</a>
         <a href="" ng-click="update(item)">编辑</a>
       </td>

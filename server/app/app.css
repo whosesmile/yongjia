@@ -12,6 +12,7 @@ input[type='password'] { font-family: sans-serif; }
 .text-info { color: #5bc0de !important; }
 .text-warning { color: #f49700 !important; }
 .text-danger { color: #e64418 !important; }
+.modal-body-fixed-height { max-height: 460px; overflow: auto; }
 
 /* angular */
 input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty { border-color: #5cb85c; }
@@ -169,3 +170,6 @@ form .group-title { font-size: 16px; border-left: 3px solid #ff8800; padding-lef
 .bg-info { padding: 10px; border-radius: 5px; overflow: hidden; }
 td.actions a:not(:last-child) { position: relative; margin-right: 13px; }
 td.actions a:not(:last-child):after { position: absolute; content: '|'; color: #eee; top: 0; right: -10px; }
+.upload { position: relative; margin-bottom: 10px; }
+.upload input[type="file"] { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 100; opacity: 0; }
+.preimg { display: block; width: 100%; }

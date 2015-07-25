@@ -40,11 +40,11 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
       var deferred = $q.defer();
       var file = $files[0];
       $injector.get('$upload').upload({
-        url: '/brickadmin/contract/agreement/uploadFile.json',
+        url: '/web/uploadPic',
         method: 'POST',
         file: file
       }).then(function (res) {
-        deferred.resolve(res.message);
+        deferred.resolve(res.entity.url);
         growl.addSuccessMessage('上传成功');
       }, function (rej) {
         growl.addErrorMessage(rej.message || '上传失败');

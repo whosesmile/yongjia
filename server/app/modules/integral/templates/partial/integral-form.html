@@ -1,0 +1,45 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <form class="form-horizontal" name="form">
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>名称：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="请输入名称" ng-model="entity.name" name="name" autofocus required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>总积分：</label>
+      <div class="col-sm-7">
+        <input type="number" class="form-control" placeholder="请输入总积分数量" ng-model="entity.totalPoint" name="totalPoint" required />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>起始时间：</label>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="请输入起始时间" ng-model="entity.startAt" is-open="time1Opened" name="startAt" required datepicker-popup="yyyy-MM-dd" readonly />
+          <a class="input-group-addon" ng-click="time1Opened=true;$event.stopPropagation();"><i class="fa fa-calendar"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>结束时间：</label>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="请输入结束时间" ng-model="entity.endAt" is-open="time2Opened" name="endAt" required datepicker-popup="yyyy-MM-dd" readonly />
+          <a class="input-group-addon" ng-click="time2Opened=true;$event.stopPropagation();"><i class="fa fa-calendar"></i></a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing">
+  <span ng-if="!entity.processing">确定</span>
+  <span ng-if="entity.processing">处理中...</span>
+  </button>
+  <button class="btn btn-default" ng-click="$dismiss()">取消</button>
+</div>

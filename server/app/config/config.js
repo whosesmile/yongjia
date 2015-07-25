@@ -106,6 +106,20 @@ app.config(function ($httpProvider) {
             }
           });
         }
+
+        var parseDate = function (obj) {
+          angular.forEach(obj, function (val, name) {
+            if (angular.isDate(val)) {
+              obj[name] = val.getTime();
+            }
+            else if (angular.isObject(val)) {
+              parseDate(val);
+            }
+          });
+        };
+        parseDate(config.params);
+        parseDate(config.data);
+
         return $q.when(config);
       },
       response: function (response) {

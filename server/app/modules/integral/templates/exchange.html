@@ -5,18 +5,26 @@
   <div class="row">
     <div class="col-sm-9"></div>
     <div class="col-sm-3 text-right">
-      <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 新建资讯</a>
+      <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 为客户兑换</a>
     </div>
   </div>
 </div>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>资讯ID</th>
-      <th>资讯标题</th>
-      <th>资讯头图</th>
-      <th>创建时间</th>
-      <th>创建者</th>
+      <th>头像</th>
+      <th>微信昵称</th>
+      <th>openId</th>
+      <th>姓名</th>
+      <th>手机号</th>
+      <th>称呼</th>
+      <th>是否车主</th>
+      <th>兑换类型</th>
+      <th>兑换货品</th>
+      <th>所需积分</th>
+      <th>兑换数量</th>
+      <th>扣除积分</th>
+      <th>更新时间</th>
       <th>状态</th>
       <th class="text-right">操作</th>
     </tr>
@@ -33,16 +41,23 @@
       </td>
     </tr>
     <tr ng-repeat="item in list">
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td class="actions">
-        <a class="action">下线</a>
-        <a class="action">推送</a>
-        <a class="action">编辑</a>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td>{{ item.id }}</td>
+      <td class="actions text-right">
+        <a class="action" href="" ng-click="exchange(item)">兑换</a>
+        <a class="action" href="">取消</a>
       </td>
     </tr>
   </tbody>

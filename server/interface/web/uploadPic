@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "data": {
+    "message": "",
+    "entity": {
+      "url": "/vendor/images/holder.jpg"
+    }
+  }
+}
