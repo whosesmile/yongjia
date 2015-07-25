@@ -199,6 +199,7 @@ app.run(function ($rootScope) {
   var temp = document.createElement('a');
   temp.setAttribute('href', document.querySelector('link[rel="stylesheet"]').getAttribute('href'));
   $rootScope.shost = temp.protocol + '//' + temp.host;
+
   $rootScope.roles = [{
     id: 1,
     name: '管理员'
@@ -211,6 +212,14 @@ app.run(function ($rootScope) {
   }, {
     id: 4,
     name: '销售'
+  }];
+
+  $rootScope.carFrom = [{
+    id: 0,
+    name: '国产'
+  }, {
+    id: 1,
+    name: '进口'
   }];
 });
 

@@ -173,3 +173,5 @@ td.actions a:not(:last-child):after { position: absolute; content: '|'; color: #
 .upload { position: relative; margin-bottom: 10px; }
 .upload input[type="file"] { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 100; opacity: 0; }
 .preimg { display: block; width: 100%; }
+td > .figure { width: 60px; height: 60px; overflow: hidden; }
+td > .figure img { width: 100%; }

@@ -13,13 +13,10 @@
   <thead>
     <tr>
       <th>序列号</th>
-      <th>公众号(经销商)</th>
       <th>车型名称</th>
       <th>国产/进口</th>
       <th>指导价</th>
       <th>头图</th>
-      <th>图库</th>
-      <th>型号</th>
       <th>更新时间</th>
       <th>状态</th>
       <th class="text-right">操作</th>
@@ -37,23 +34,21 @@
       </td>
     </tr>
     <tr ng-repeat="item in list">
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td>{{ item }}</td>
-      <td class="actions">
-        <a class="action">撤出</a>
-        <a class="action">修改</a>
+      <td>{{ item.id }}</td>
+      <td>{{ item.typeName }}</td>
+      <td>{{ item.importFlag|goodsFrom }}</td>
+      <td>{{ item.priceLowest }} - {{ item.priceMost }}</td>
+      <td><div class="figure"><img ng-src="{{ item.img }}" /></div></td>
+      <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td ng-class="{'text-danger': item.status}">{{ item.status|goodsStatus }}</td>
+      <td class="actions text-right">
+        <a href="" class="text-danger" ng-if="item.status === 0" ng-click="toggle(item)">下线</a>
+        <a href="" ng-if="item.status === 1" ng-click="toggle(item)">上线</a>
+        <a class="action" href="" ng-click="update(item)">修改</a>
       </td>
     </tr>
   </tbody>
 </table>
 <div class="text-right">
-  <ul class="pagination-sm" pagination ng-model="page" items-per-page="size" total-items="total" ng-change="query()"></ul>
+  <ul class="pagination-sm" pagination ng-model="pageNo" items-per-page="pageSize" total-items="totalCount" ng-change="query()"></ul>
 </div>

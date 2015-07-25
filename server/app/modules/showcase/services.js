@@ -1,10 +1,10 @@
 showcaseModule.factory('goodsService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
-    query: '/user/web/user/list.json',
-    create: '/user/web/user/save.json',
-    update: '/user/web/user/update.json',
-    remove: '/user/web/user/delete.json',
-    toggle: '/user/web/user/toggle.json'
+    query: '/web/car/carHalllist',
+    create: '/web/car/addCarHall',
+    update: '/web/car/updateCarHall',
+    remove: '/web/car/deleteHalllist',
+    toggle: '/web/car/toggleCarHall'
   }).methods({
 
   });
