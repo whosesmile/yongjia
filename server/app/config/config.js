@@ -49,7 +49,7 @@ try {
         paste_text_sticky_default: true,
         paste_text_sticky: true,
         plugins: 'upload2 textcolor link fullscreen',
-        toolbar: "bold underline strikethrough | alignleft aligncenter alignright bullist numlist | blockquote link upload removeformat | fullscreen",
+        toolbar: "bold underline strikethrough | alignleft aligncenter alignright bullist numlist | link upload | fullscreen",
         toolbar_items_size: 'small',
         relative_urls: false,
         height: 300,

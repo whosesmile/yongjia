@@ -169,7 +169,7 @@ form .group-title { font-size: 16px; border-left: 3px solid #ff8800; padding-lef
 .label-text { padding: 7px; margin-right: 60px; }
 .bg-info { padding: 10px; border-radius: 5px; overflow: hidden; }
 td.actions a:not(:last-child) { position: relative; margin-right: 13px; }
-td.actions a:not(:last-child):after { position: absolute; content: '|'; color: #eee; top: 0; right: -10px; }
+td.actions a:not(:last-child):after { position: absolute; content: ''; color: #ccc; top: 0; right: -10px; height: 16px; border-left: 1px solid #ccc; }
 .upload { position: relative; margin-bottom: 10px; }
 .upload input[type="file"] { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 100; opacity: 0; }
 .preimg { display: block; width: 100%; }

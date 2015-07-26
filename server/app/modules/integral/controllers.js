@@ -10,14 +10,24 @@ integralModule.controller('pollController', function ($scope, $state, $modal, gr
 
 });
 
-integralModule.controller('giftController', function ($scope, $state, $modal, growl, giftService, controllerGenerator, $q) {
+integralModule.controller('giftController', function ($scope, $state, $modal, growl, giftService, controllerGenerator, $q, commonService) {
   // 给$scope添加标准化CRUD操作
   controllerGenerator($scope, giftService, {
     title: '礼品',
+    modalsize: 'lg',
     property: 'name',
     createTemplate: 'modules/integral/templates/partial/gift-form.html',
     updateTemplate: 'modules/integral/templates/partial/gift-form.html',
-    autoload: true
+    autoload: true,
+    dynamicMerge: function (type, scope) {
+      if (type === 'create' || type === 'update') {
+        scope.upload = function ($files) {
+          return commonService.upload($files).then(function (url) {
+            scope.entity.pic = url;
+          });
+        };
+      }
+    }
   });
 
   $scope.params = {};

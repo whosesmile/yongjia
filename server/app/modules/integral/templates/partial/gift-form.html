@@ -23,9 +23,21 @@
       </div>
     </div>
     <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>礼品图片：</label>
+      <div class="col-sm-7">
+        <div class="upload">
+          <a class="btn btn-success">+上传资讯头图</a>
+          <input type="file" class="file" ng-file-select="upload($files)" accept="image/*" />
+        </div>
+      </div>
+      <div class="col-sm-offset-3 col-sm-7" ng-if="entity.pic">
+        <img ng-src="{{ entity.pic }}" class="preimg" />
+      </div>
+    </div>
+    <div class="form-group">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>产品描述：</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" placeholder="请输入产品描述" ng-model="entity.content" name="content" required />
+        <textarea class="form-control" ui-tinymce placeholder="请输入产品描述" ng-model="entity.content" name="content" required></textarea>
       </div>
     </div>
   </form>

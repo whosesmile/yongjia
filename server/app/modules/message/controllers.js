@@ -2,6 +2,7 @@ messageModule.controller('messageController', function ($scope, $state, $modal, 
   // 给$scope添加标准化CRUD操作
   controllerGenerator($scope, messageService, {
     title: '资讯',
+    modalsize: 'lg',
     property: 'name',
     createTemplate: 'modules/message/templates/partial/message-form.html',
     updateTemplate: 'modules/message/templates/partial/message-form.html',
