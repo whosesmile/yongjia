@@ -60,11 +60,15 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
               return item.status === 0;
             });
 
+            var count = scope.list.length;
+
             scope.confirm = function (item) {
               memberService.passMemberCar(item.id).then(function (data) {
                 $scope.query();
                 growl.addSuccessMessage('已经通过验证');
-                scope.$dismiss();
+                if (--count === 0) {
+                  scope.$dismiss();
+                }
               });
             };
 
@@ -72,7 +76,9 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
               memberService.nopassMemberCar(item.id).then(function (data) {
                 $scope.query();
                 growl.addSuccessMessage('已经否决验证');
-                scope.$dismiss();
+                if (--count === 0) {
+                  scope.$dismiss();
+                }
               });
             };
           }
