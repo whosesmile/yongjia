@@ -48,7 +48,7 @@ try {
         statusbar: false,
         paste_text_sticky_default: true,
         paste_text_sticky: true,
-        plugins: 'upload2 textcolor link fullscreen',
+        plugins: 'upload textcolor link fullscreen',
         toolbar: "bold underline strikethrough | alignleft aligncenter alignright bullist numlist | link upload | fullscreen",
         toolbar_items_size: 'small',
         relative_urls: false,

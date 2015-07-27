@@ -35,7 +35,7 @@
     <tr ng-repeat="item in list">
       <td>{{ item.id }}</td>
       <td>{{ item.title }}</td>
-      <td>{{ item.pic }}</td>
+      <td><div class="figure"><img ng-src="{{ item.pic }}" /></div></td>
       <td>{{ item.createAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.createBy }}</td>
       <td ng-class="{'text-danger': item.status}">{{ item.status|messageStatus }}</td>
