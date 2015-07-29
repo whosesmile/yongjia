@@ -7,120 +7,140 @@
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 0,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }, {
       "id": 2,
       "name": "2014积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 2000,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
-    }, {
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    },{
       "id": 1,
       "name": "2015积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 0,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }, {
       "id": 2,
       "name": "2014积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 2000,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
-    }, {
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    },{
       "id": 1,
       "name": "2015积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 0,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }, {
       "id": 2,
       "name": "2014积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 2000,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
-    }, {
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    },{
       "id": 1,
       "name": "2015积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 0,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }, {
       "id": 2,
       "name": "2014积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 2000,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
-    }, {
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    },{
       "id": 1,
       "name": "2015积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 0,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }, {
       "id": 2,
       "name": "2014积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 2000,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
-    }, {
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    },{
       "id": 1,
       "name": "2015积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 0,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }, {
       "id": 2,
       "name": "2014积分池",
       "startAt": 1436841087691,
       "endAt": 1436841087691,
       "totalPoint": 2000,
-      "registerPoint": null,
-      "memberPoint": null,
-      "carOwnerPoint": null,
-      "toBuyCarPoint": null
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    },{
+      "id": 1,
+      "name": "2015积分池",
+      "startAt": 1436841087691,
+      "endAt": 1436841087691,
+      "totalPoint": 0,
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
+    }, {
+      "id": 2,
+      "name": "2014积分池",
+      "startAt": 1436841087691,
+      "endAt": 1436841087691,
+      "totalPoint": 2000,
+      "registerPoint": 10,
+      "memberPoint": 20,
+      "carOwnerPoint": 30,
+      "toBuyCarPoint": 100
     }],
     "pageNo": 1,
     "pageSize": 20,

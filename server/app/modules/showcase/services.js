@@ -6,6 +6,10 @@ showcaseModule.factory('goodsService', function (serviceGenerator, $http) {
     remove: '/web/car/deleteHalllist',
     toggle: '/web/car/toggleCarHall'
   }).methods({
-
+    getCarType: function () {
+      return $http({
+        url: '/web/car/getCarType'
+      });
+    }
   });
 });

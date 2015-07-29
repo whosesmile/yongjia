@@ -15,7 +15,10 @@
     <div class="form-group">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>车型名称：</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" placeholder="请输入车型名称" ng-model="entity.typeName" name="typeName" required />
+        <!-- <input type="text" class="form-control" placeholder="请输入车型名称" ng-model="entity.typeName" name="typeName" required /> -->
+        <select class="form-control" ng-model="entity.typeId" name="roleId" required ng-options="item.id as item.carTypeName for item in list" required>
+          <option value="">请选择</option>
+        </select>
       </div>
     </div>
     <div class="form-group">

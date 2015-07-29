@@ -8,6 +8,30 @@ integralModule.controller('pollController', function ($scope, $state, $modal, gr
     autoload: true
   });
 
+  $scope.append = function (item) {
+    $modal.open({
+      templateUrl: 'modules/integral/templates/partial/integral-append.html',
+      controller: ['$scope',
+        function (scope) {
+          scope.title = '追加积分';
+          scope.entity = {
+            pointPoolId: item.id
+          };
+          scope.confirm = function () {
+            pollService.append(scope.entity).then(function (res) {
+              $scope.query();
+              growl.addSuccessMessage('追加积分成功！');
+              scope.$close();
+            }, function (rej) {
+              growl.addErrorMessage(rej.message || scope.title + '失败！');
+              return $q.reject(rej);
+            });
+          };
+        }
+      ]
+    });
+  };
+
 });
 
 integralModule.controller('giftController', function ($scope, $state, $modal, growl, giftService, controllerGenerator, $q, commonService) {
@@ -59,17 +83,6 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
 integralModule.controller('historyController', function ($scope, $state, $modal, growl, historyService, controllerGenerator, $q) {
   // 给$scope添加标准化CRUD操作
   controllerGenerator($scope, historyService, {
-    title: '车型参数',
-    property: 'name',
-    createTemplate: '',
-    updateTemplate: '',
-    autoload: true
-  });
-});
-
-integralModule.controller('projectController', function ($scope, $state, $modal, growl, projectService, controllerGenerator, $q) {
-  // 给$scope添加标准化CRUD操作
-  controllerGenerator($scope, projectService, {
     title: '车型参数',
     property: 'name',
     createTemplate: '',

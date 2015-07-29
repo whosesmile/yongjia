@@ -6,7 +6,13 @@ messageModule.factory('pollService', function (serviceGenerator, $http) {
     remove: '/web/pool/delete',
     toggle: '/web/pool/toggle'
   }).methods({
-
+    append: function (data) {
+      return $http({
+        url: '/web/point/addPoint',
+        method: 'post',
+        data: data
+      });
+    }
   });
 });
 
@@ -49,18 +55,6 @@ messageModule.factory('historyService', function (serviceGenerator, $http) {
     update: '1',
     remove: '1',
     toggle: '1'
-  }).methods({
-
-  });
-});
-
-messageModule.factory('projectService', function (serviceGenerator, $http) {
-  return serviceGenerator().actions({
-    query: '/web/gift/list',
-    create: '/web/gift/add',
-    update: '/web/gift/update',
-    remove: '/web/gift/delete',
-    toggle: '/web/gift/toggle'
   }).methods({
 
   });

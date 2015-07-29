@@ -41,7 +41,7 @@
       <td>{{ item.posMessage|is }}</td>
       <td>{{ item.posManager|is }}</td>
       <td>{{ item.createAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
-      <td>{{ item.createBy }}</td>
+      <td>{{ item.createByName }}</td>
       <td ng-class="{'text-danger': item.status}">{{ item.status|messageStatus }}</td>
       <td class="actions text-right">
         <a href="" class="text-danger" ng-if="item.status === 0" ng-click="toggle(item)">下线</a>

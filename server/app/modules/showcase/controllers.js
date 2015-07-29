@@ -8,6 +8,22 @@ showcaseModule.controller('goodsController', function ($scope, $state, $modal, g
     autoload: true,
     dynamicMerge: function (type, scope) {
       if (type === 'create' || type === 'update') {
+
+        goodsService.getCarType().then(function (data) {
+          scope.list = data.list;
+        });
+
+        scope.$watch('entity.typeId', function () {
+          scope.typeName = '';
+          if (scope.list) {
+            scope.list.forEach(function (item) {
+              if (item.id === scope.entity.typeId) {
+                scope.entity.typeName = item.carTypeName;
+              }
+            });
+          }
+        });
+
         scope.upload = function ($files) {
           return commonService.upload($files).then(function (url) {
             scope.entity.img = url;

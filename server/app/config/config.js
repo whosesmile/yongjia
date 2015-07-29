@@ -272,9 +272,6 @@ app.value('menubar', [
       "sref": "#/integral/poll",
       "name": "积分池",
     }, {
-      "sref": "#/integral/project",
-      "name": "积分项目",
-    }, {
       "sref": "#/integral/gift",
       "name": "礼品管理",
     }, {

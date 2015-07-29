@@ -16,7 +16,11 @@
       <th>积分池名称</th>
       <th>生效时间</th>
       <th>失效时间</th>
-      <th>积分初始值</th>
+      <th>积分总值</th>
+      <th>关注送积分</th>
+      <th>注册送积分</th>
+      <th>验证送积分</th>
+      <th>买车送积分</th>
       <th class="text-right">操作</th>
     </tr>
   </thead>
@@ -37,9 +41,13 @@
       <td>{{ item.startAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.endAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.totalPoint }}</td>
+      <td>{{ item.registerPoint }}</td>
+      <td>{{ item.memberPoint }}</td>
+      <td>{{ item.carOwnerPoint }}</td>
+      <td>{{ item.toBuyCarPoint }}</td>
       <td class="actions text-right">
         <a class="action" href="" ng-click="update(item)">修改</a>
-        <a class="action" href="" ng-click="">设置积分项</a>
+        <a class="action" href="" ng-click="append(item)">追加积分</a>
         <a class="action" href="" ng-click="remove(item)">删除</a>
       </td>
     </tr>

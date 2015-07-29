@@ -1,0 +1,10 @@
+{
+  "data": {
+    "message": "success",
+    "list": [{
+      "id": 1,
+      "carTypeName": "奥迪"
+    }]
+  },
+  "code": 200
+}

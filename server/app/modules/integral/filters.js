@@ -5,3 +5,11 @@ app.filter('giftStatus', function () {
     return status[input];
   };
 });
+
+// 状态
+app.filter('integralStatus', function () {
+  var status = ['过期', '生效', '未生效'];
+  return function (input) {
+    return status[input];
+  };
+});

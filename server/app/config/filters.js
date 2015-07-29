@@ -127,6 +127,6 @@ app.filter('truncate', function () {
 // 是否
 app.filter('is', function () {
   return function (input) {
-    return Number(status) === 0 ? '否' : '是';
+    return Number(input) === 0 ? '否' : '是';
   };
 });
