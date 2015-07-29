@@ -123,3 +123,10 @@ app.filter('truncate', function () {
     return input;
   };
 });
+
+// 是否
+app.filter('is', function () {
+  return function (input) {
+    return Number(status) === 0 ? '否' : '是';
+  };
+});

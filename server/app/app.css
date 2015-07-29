@@ -175,3 +175,4 @@ td.actions a:not(:last-child):after { position: absolute; content: ''; color: #c
 .preimg { display: block; width: 100%; }
 td > .figure { width: 60px; height: 60px; overflow: hidden; }
 td > .figure img { width: 100%; }
+.checklabel { padding-top: 7px; margin-right: 10px; }
