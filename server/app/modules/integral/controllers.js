@@ -15,7 +15,7 @@ integralModule.controller('pollController', function ($scope, $state, $modal, gr
         function (scope) {
           scope.title = '追加积分';
           scope.entity = {
-            pointPoolId: item.id
+            id: item.id
           };
           scope.confirm = function () {
             pollService.append(scope.entity).then(function (res) {
@@ -45,6 +45,11 @@ integralModule.controller('giftController', function ($scope, $state, $modal, gr
     autoload: true,
     dynamicMerge: function (type, scope) {
       if (type === 'create' || type === 'update') {
+        if (type === 'update') {
+          giftService.details(scope.entity).then(function (data) {
+            scope.entity = data.entity;
+          });
+        }
         scope.upload = function ($files) {
           return commonService.upload($files).then(function (url) {
             scope.entity.pic = url;

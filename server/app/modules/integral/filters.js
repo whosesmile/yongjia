@@ -8,7 +8,7 @@ app.filter('giftStatus', function () {
 
 // 状态
 app.filter('integralStatus', function () {
-  var status = ['过期', '生效', '未生效'];
+  var status = ['已过期', '已生效', '未生效'];
   return function (input) {
     return status[input];
   };

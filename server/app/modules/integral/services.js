@@ -8,7 +8,7 @@ messageModule.factory('pollService', function (serviceGenerator, $http) {
   }).methods({
     append: function (data) {
       return $http({
-        url: '/web/point/addPoint',
+        url: '/web/pool/charge',
         method: 'post',
         data: data
       });
@@ -22,7 +22,8 @@ messageModule.factory('giftService', function (serviceGenerator, $http) {
     create: '/web/gift/add',
     update: '/web/gift/update',
     remove: '/web/gift/delete',
-    toggle: '/web/gift/toggle'
+    toggle: '/web/gift/toggle',
+    details: '/web/gift/get'
   }).methods({
 
   });

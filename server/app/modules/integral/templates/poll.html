@@ -16,12 +16,12 @@
       <th>积分池名称</th>
       <th>生效时间</th>
       <th>失效时间</th>
-      <th>当前状态</th>
       <th>积分总值</th>
       <th>关注送积分</th>
       <th>注册送积分</th>
       <th>验证送积分</th>
       <th>买车送积分</th>
+      <th>当前状态</th>
       <th class="text-right">操作</th>
     </tr>
   </thead>
@@ -41,16 +41,16 @@
       <td>{{ item.name }}</td>
       <td>{{ item.startAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.endAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
-      <td>{{ item.status|integralStatus }}</td>
       <td>{{ item.totalPoint }}</td>
       <td>{{ item.registerPoint }}</td>
       <td>{{ item.memberPoint }}</td>
       <td>{{ item.carOwnerPoint }}</td>
       <td>{{ item.toBuyCarPoint }}</td>
+      <td ng-class="{'text-success': item.status === 1,'text-muted': item.status !== 1,}">{{ item.status|integralStatus }}</td>
       <td class="actions text-right">
-        <a class="action" href="" ng-click="update(item)" ng-class="{disabled: item.status !== 1}">修改</a>
-        <a class="action" href="" ng-click="append(item)" ng-class="{disabled: item.status !== 1}">追加积分</a>
-        <a class="action" href="" ng-click="remove(item)" ng-class="{disabled: item.status !== 1}">删除</a>
+        <a class="action" href="" ng-click="update(item)" ng-class="{disabled: item.status !== 2}">修改</a>
+        <a class="action" href="" ng-click="append(item)" ng-class="{disabled: item.status === 0}">追加积分</a>
+        <a class="action" href="" ng-click="remove(item)" ng-class="{disabled: item.status !== 2}">删除</a>
       </td>
     </tr>
   </tbody>
