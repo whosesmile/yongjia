@@ -37,7 +37,7 @@
       <td>{{ item.id }}</td>
       <td>{{ item.typeName }}</td>
       <td>{{ item.importFlag|goodsFrom }}</td>
-      <td>{{ item.priceLowest }} - {{ item.priceMost }}</td>
+      <td>{{ item.priceLowest }}万 - {{ item.priceMost }}万</td>
       <td><div class="figure"><img ng-src="{{ item.img }}" /></div></td>
       <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td ng-class="{'text-danger': item.status}">{{ item.status|goodsStatus }}</td>

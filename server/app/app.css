@@ -177,3 +177,4 @@ td.actions .disabled { color: #999; pointer-events: none; }
 td > .figure { width: 60px; height: 60px; overflow: hidden; }
 td > .figure img { width: 100%; }
 .checklabel { padding-top: 7px; margin-right: 10px; }
+.form-control[readonly] { background-color: #fff; border: none; box-shadow: none; }

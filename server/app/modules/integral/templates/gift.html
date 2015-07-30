@@ -16,8 +16,9 @@
       <th>名称</th>
       <th>供应商</th>
       <th>推荐积分</th>
-      <th>状态</th>
+      <th>创建时间</th>
       <th>更新时间</th>
+      <th>状态</th>
       <th class="text-right">操作</th>
     </tr>
   </thead>
@@ -37,9 +38,11 @@
       <td>{{ item.name }}</td>
       <td>{{ item.prividerName }}</td>
       <td>{{ item.point }}</td>
-      <td ng-class="{'text-danger': item.status}">{{ item.status|giftStatus }}</td>
+      <td>{{ item.createAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td ng-class="{'text-danger': item.status}">{{ item.status|giftStatus }}</td>
       <td class="actions text-right">
+        <a class="action" href="" ng-click="details(item)">预览</a>
         <a href="" class="text-danger" ng-if="item.status === 0" ng-click="toggle(item)">停用</a>
         <a href="" ng-if="item.status === 1" ng-click="toggle(item)">启用</a>
         <a class="action" href="" ng-click="update(item)">编辑</a>

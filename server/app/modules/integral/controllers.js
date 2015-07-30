@@ -42,6 +42,7 @@ integralModule.controller('giftController', function ($scope, $state, $modal, gr
     property: 'name',
     createTemplate: 'modules/integral/templates/partial/gift-form.html',
     updateTemplate: 'modules/integral/templates/partial/gift-form.html',
+    detailsTemplate: 'modules/integral/templates/partial/gift-details.html',
     autoload: true,
     dynamicMerge: function (type, scope) {
       if (type === 'create' || type === 'update') {
