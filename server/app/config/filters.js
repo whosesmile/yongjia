@@ -130,3 +130,9 @@ app.filter('is', function () {
     return Number(input) === 0 ? '否' : '是';
   };
 });
+
+app.filter('isUndefined', function () {
+  return function (input) {
+    return angular.isUndefined(input) || input === '';
+  };
+});

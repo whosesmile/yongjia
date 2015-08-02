@@ -7,9 +7,12 @@ showcaseModule.factory('goodsService', function (serviceGenerator, $http) {
     toggle: '/web/car/toggleCarHall',
     details: '/web/car/getCarHallDetail',
   }).methods({
-    getCarType: function () {
+    getCarType: function (flag) {
       return $http({
-        url: '/common/getCarType'
+        url: '/common/getCarType',
+        params: {
+          importFlag: flag
+        }
       });
     },
     getCarModel: function (id) {

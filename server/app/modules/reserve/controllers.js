@@ -1,4 +1,4 @@
-reserveModule.controller('recordController', function ($scope, $state, $modal, growl, recordService, controllerGenerator, $q, dialog, memberService, commonService) {
+reserveModule.controller('recordController', function ($scope, $state, $modal, growl, recordService, controllerGenerator, $q, dialog, memberService, commonService, goodsService) {
   // 给$scope添加标准化CRUD操作
   controllerGenerator($scope, recordService, {
     title: '预约',
@@ -46,11 +46,29 @@ reserveModule.controller('recordController', function ($scope, $state, $modal, g
             });
           });
 
+          scope.$watch('entity.importFlag', function (flag) {
+            scope.list = [];
+            if (flag !== '') {
+              goodsService.getCarType(flag).then(function (data) {
+                scope.carTypes = data.list;
+              });
+            }
+          });
+
+          scope.$watch('entity.typeId', function (id) {
+            scope.carModels = [];
+            if (id) {
+              goodsService.getCarModel(id).then(function (data) {
+                scope.carModels = data.list;
+              });
+            }
+          });
+
           scope.chooseMember = function () {
             commonService.selectItems({
               title: '选择客户',
               template: 'config/templates/member.partial.html',
-              url: '/web/wxuser/list',
+              url: '/web/wxuser/list?isMember=1',
               single: true
             }).then(function (member) {
               scope.entity.memberId = member.id;

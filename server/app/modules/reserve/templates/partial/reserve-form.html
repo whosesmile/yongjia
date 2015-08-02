@@ -69,7 +69,40 @@
     </span>
 
     <span ng-if="entity.type === 3">
-      
+      <div class="form-group">
+        <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>国产/进口：</label>
+        <div class="col-sm-7">
+          <select class="form-control" ng-model="entity.importFlag" name="importFlag" required ng-options="item.id as item.name for item in carFrom">
+            <option value="">请选择</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>车型名称：</label>
+        <div class="col-sm-7" ng-if="entity.importFlag === 0 || entity.importFlag === 1">
+          <select class="form-control" ng-model="entity.typeId" name="typeId" required ng-options="item.id as item.carTypeName for item in carTypes" required>
+            <option value="">请选择</option>
+          </select>
+        </div>
+        <div class="col-sm-7" ng-if="entity.importFlag !== 0 &amp;&amp; entity.importFlag !== 1">
+          <label class="checklabel">
+            <span class="text-muted">请选择国产/进口</span>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>选择车款：</label>
+        <div class="col-sm-7" ng-if="carModels.length">
+        <select class="form-control" ng-model="entity.carType" required ng-options="item.carModelName as item.carModelName for item in carModels">
+            <option value="">请选择</option>
+          </select>
+        </div>
+        <div class="col-sm-7" ng-if="!carModels.length">
+          <label class="checklabel">
+            <span class="text-muted">请选择车型</span>
+          </label>
+        </div>
+      </div>
     </span>
 
     <span ng-if="entity.type === 5">

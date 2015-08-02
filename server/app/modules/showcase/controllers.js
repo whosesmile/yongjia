@@ -21,21 +21,21 @@ showcaseModule.controller('goodsController', function ($scope, $state, $modal, g
           });
         }
 
-        goodsService.getCarType().then(function (data) {
-          scope.list = data.list;
+        scope.$watch('entity.importFlag', function (flag) {
+          scope.list = [];
+          if (flag !== '') {
+            goodsService.getCarType(flag).then(function (data) {
+              scope.list = data.list;
+            });
+          }
         });
 
         scope.$watch('entity.typeId', function (id) {
+          scope.carModels = [];
           if (id) {
             goodsService.getCarModel(id).then(function (data) {
               scope.carModels = data.list;
             });
-
-            // scope.list.forEach(function (item) {
-            //   if (item.id === scope.entity.typeId) {
-            //     scope.entity.typeName = item.carTypeName;
-            //   }
-            // });
           }
         });
 

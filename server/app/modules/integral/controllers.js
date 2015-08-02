@@ -91,7 +91,7 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
             commonService.selectItems({
               title: '选择客户',
               template: 'config/templates/member.partial.html',
-              url: '/web/wxuser/list',
+              url: '/web/wxuser/list?isMember=1',
               single: true
             }).then(function (member) {
               scope.entity.memberId = member.id;
@@ -103,10 +103,11 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
             commonService.selectItems({
               title: '选择礼品',
               template: 'config/templates/gift.partial.html',
-              url: '/web/gift/list',
+              url: '/web/gift/list?status=0',
               single: true
             }).then(function (gift) {
               scope.entity.actionContent = gift.name;
+              scope.entity.point = gift.point;
             });
           };
 
@@ -151,7 +152,7 @@ integralModule.controller('historyController', function ($scope, $state, $modal,
             commonService.selectItems({
               title: '选择客户',
               template: 'config/templates/member.partial.html',
-              url: '/web/wxuser/list',
+              url: '/web/wxuser/list?isMember=1',
               single: true
             }).then(function (member) {
               scope.entity.memberId = member.id;
