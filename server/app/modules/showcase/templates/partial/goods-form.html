@@ -81,7 +81,7 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.img">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.img || !entity.carModelIds.length">
   <span ng-if="!entity.processing">确定</span>
   <span ng-if="entity.processing">处理中...</span>
   </button>
