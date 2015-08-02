@@ -35,7 +35,7 @@
       <th>关注状态</th>
       <th>绑定状态</th>
       <th>当前积分</th>
-      <th>操作</th>
+      <th class="text-right">操作</th>
     </tr>
   </thead>
   <tbody>
@@ -61,8 +61,8 @@
       <td>{{ item.subscribe|memberFollow }}</td>
       <td>{{ item.id|memberBind:item.status }}</td>
       <td>{{ item.point || 0 }}</td>
-      <td ng-if="item.valiFlag != 1"><a class="text-muted">验证</a></td>
-      <td ng-if="item.valiFlag == 1"><a href="" ng-click="checkMemberCar(item)">验证</a></td>
+      <td class="text-right" ng-if="item.valiFlag != 1"><a class="text-muted">验证</a></td>
+      <td class="text-right" ng-if="item.valiFlag == 1"><a href="" ng-click="checkMemberCar(item)">验证</a></td>
     </tr>
   </tbody>
 </table>

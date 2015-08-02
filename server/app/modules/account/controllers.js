@@ -42,7 +42,7 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
         templateUrl: 'modules/account/templates/partial/membercars.html',
         controller: ['$scope',
           function (scope) {
-            scope.list = data.entity;
+            scope.list = data.list;
           }
         ]
       });
@@ -65,6 +65,7 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
             scope.confirm = function (item) {
               memberService.passMemberCar(item.id).then(function (data) {
                 $scope.query();
+                scope.list.splice(scope.list.indexOf(item), 1);
                 growl.addSuccessMessage('已经通过验证');
                 if (--count === 0) {
                   scope.$dismiss();
@@ -75,6 +76,7 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
             scope.failure = function (item) {
               memberService.nopassMemberCar(item.id).then(function (data) {
                 $scope.query();
+                scope.list.splice(scope.list.indexOf(item), 1);
                 growl.addSuccessMessage('已经否决验证');
                 if (--count === 0) {
                   scope.$dismiss();

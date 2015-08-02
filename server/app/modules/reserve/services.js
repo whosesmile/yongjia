@@ -12,6 +12,14 @@ reserveModule.factory('recordService', function (serviceGenerator, $http) {
           arriveTime: arriveTime
         }
       });
+    },
+
+    addAppointment: function (data) {
+      return $http({
+        url: '/web/appointment/add',
+        method: 'post',
+        data: data
+      });
     }
   });
 });

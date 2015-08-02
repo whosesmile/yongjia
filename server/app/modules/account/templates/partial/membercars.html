@@ -13,7 +13,7 @@
         <th>车牌</th>
         <th class="text-right">状态</th>
       </tr>
-      <tr ng-repeat="item in list">
+      <tr ng-repeat="item in list" ng-if="item.status !== 2">
         <td>{{ item.id }}</td>
         <td>{{ item.typeName }}</td>
         <td>{{ item.modelName }}</td>
