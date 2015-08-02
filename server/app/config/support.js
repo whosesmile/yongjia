@@ -83,14 +83,26 @@ var serialize = function (obj) {
     if (obj.hasOwnProperty(name)) {
       value = obj[name];
 
-      if (value instanceof Array) {
+      if (value instanceof Date) {
+        query += encodeURIComponent(name) + '=' + value.getTime() + '&';
+      }
+      else if (value instanceof Array) {
         for (i = 0; i < value.length; ++i) {
           subValue = value[i];
-          fullSubName = name;
-          innerObj = {};
-          innerObj[fullSubName] = subValue;
-          query += serialize(innerObj) + '&';
+          if (subValue) {
+            fullSubName = name;
+            innerObj = {};
+            innerObj[fullSubName] = subValue;
+            query += serialize(innerObj) + '&';
+          }
         }
+        // var temp = [];
+        // for (i = 0; i < value.length; ++i) {
+        //   if (value[i] !== undefined && value[i] !== null) {
+        //     temp.push(value[i]);
+        //   }
+        // }
+        // query += encodeURIComponent(name) + '=' + JSON.stringify(temp) + '&';
       }
       else if (value instanceof Object) {
         for (subName in value) {

@@ -171,10 +171,13 @@ form .group-title { font-size: 16px; border-left: 3px solid #ff8800; padding-lef
 td.actions a:not(:last-child) { position: relative; margin-right: 13px; }
 td.actions a:not(:last-child):after { position: absolute; content: ''; color: #ccc; top: 0; right: -10px; height: 16px; border-left: 1px solid #ccc; }
 td.actions .disabled { color: #999; pointer-events: none; }
-.upload { position: relative; margin-bottom: 10px; }
+.upload { position: relative; margin-bottom: 10px; display: inline-block; }
 .upload input[type="file"] { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 100; opacity: 0; }
 .preimg { display: block; width: 100%; }
 td > .figure { width: 60px; height: 60px; overflow: hidden; }
 td > .figure img { width: 100%; }
 .checklabel { padding-top: 7px; margin-right: 10px; }
-.form-control[readonly] { background-color: #fff; border: none; box-shadow: none; }
+.figure-group .item { position: relative; float: left; width: 100px; height: 100px; background: #eee; text-align: center; margin: 0 15px 15px 0; overflow: hidden; }
+.figure-group .item .glyphicon-plus { font-size: 24px; color: #ccc; margin-top: 35px; }
+.figure-group .item .glyphicon-remove { position: absolute; top: 0; right: 0; color: #fc5a0a; z-index: 200; padding: 10px; }
+.figure-group .item img { display: block; width: 100px; position: absolute; top: 0; left: 0; z-index: 50; }

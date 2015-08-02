@@ -220,9 +220,9 @@ app.factory('controllerGenerator', function ($q, $rootScope, $modal, growl) {
             scope.title = '查看' + (config.title ? config.title : '');
             scope.action = 'details';
 
-            var params = angular.extend({
+            var params = {
               id: entity.id
-            });
+            };
             service.details(params).then(function (res) {
               scope.entity = $.extend({}, entity, res.entity);
             }, function (rej) {

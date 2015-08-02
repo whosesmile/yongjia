@@ -4,11 +4,20 @@ showcaseModule.factory('goodsService', function (serviceGenerator, $http) {
     create: '/web/car/addCarHall',
     update: '/web/car/updateCarHall',
     remove: '/web/car/deleteHalllist',
-    toggle: '/web/car/toggleCarHall'
+    toggle: '/web/car/toggleCarHall',
+    details: '/web/car/getCarHallDetail',
   }).methods({
     getCarType: function () {
       return $http({
-        url: '/web/car/getCarType'
+        url: '/common/getCarType'
+      });
+    },
+    getCarModel: function (id) {
+      return $http({
+        url: '/common/getCarModel',
+        params: {
+          id: id
+        }
       });
     }
   });
