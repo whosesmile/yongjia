@@ -91,7 +91,7 @@ app.filter('status', function () {
 // 判断性别
 app.filter('gender', function () {
   return function (status) {
-    return Number(status) === 0 ? '美女' : '帅哥';
+    return Number(status) === 0 ? '靓女' : '靓仔';
   };
 });
 

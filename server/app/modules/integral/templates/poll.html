@@ -17,6 +17,7 @@
       <th>生效时间</th>
       <th>失效时间</th>
       <th>积分总值</th>
+      <th>积分消耗</th>
       <th>注册送积分</th>
       <th>验证送积分</th>
       <th>买车送积分</th>
@@ -41,6 +42,7 @@
       <td>{{ item.startAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.endAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.totalPoint }}</td>
+      <td>{{ item.totalReducePoint }}</td>
       <td>{{ item.registerPoint }}</td>
       <td>{{ item.carOwnerPoint }}</td>
       <td>{{ item.toBuyCarPoint }}</td>
