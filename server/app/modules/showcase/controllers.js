@@ -36,6 +36,12 @@ showcaseModule.controller('goodsController', function ($scope, $state, $modal, g
             goodsService.getCarModel(id).then(function (data) {
               scope.carModels = data.list;
             });
+
+            scope.list.forEach(function (item) {
+              if (item.id === id) {
+                scope.entity.typeName = item.carTypeName;
+              }
+            });
           }
         });
 
@@ -70,14 +76,12 @@ showcaseModule.controller('goodsController', function ($scope, $state, $modal, g
         };
 
         scope.toggleCarModel = function (item) {
-          console.log(scope.entity.carModelIds)
           if (scope.contains(item)) {
             scope.entity.carModelIds.splice(scope.entity.carModelIds.indexOf(item.id), 1);
           }
           else {
             scope.entity.carModelIds.push(item.id);
           }
-          console.log(scope.entity.carModelIds)
         };
 
       }
