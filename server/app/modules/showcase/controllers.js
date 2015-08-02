@@ -62,17 +62,15 @@ showcaseModule.controller('goodsController', function ($scope, $state, $modal, g
         scope.contains = function (item) {
           var exist = false;
           scope.entity.carModelIds.forEach(function (id) {
-            scope.carModels.forEach(function (model) {
-              if (model.id === id) {
-                exist = true;
-              }
-            });
+            if (item.id === id) {
+              exist = true;
+            }
           });
           return exist;
         };
 
         scope.toggleCarModel = function (item) {
-          var contains = false;
+          console.log(scope.entity.carModelIds)
           if (scope.contains(item)) {
             scope.entity.carModelIds.splice(scope.entity.carModelIds.indexOf(item.id), 1);
           }

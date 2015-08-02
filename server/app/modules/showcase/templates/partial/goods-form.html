@@ -21,10 +21,15 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>添加型号：</label>
-      <div class="col-sm-7">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>选择车款：</label>
+      <div class="col-sm-7" ng-if="carModels.length">
         <label class="checklabel" ng-repeat="item in carModels">
-          <input type="checkbox" name="carModel" value="{{ item.id }}" ng-model="carModles" ng-checked="contains(item)" ng-change="toggleCarModel(item)" /> {{ item.carModelName }}
+          <input type="checkbox" name="carModel" value="{{ item.id }}" ng-model="carModles" ng-checked="contains(item)" ng-click="toggleCarModel(item)" /> {{ item.carModelName }}
+        </label>
+      </div>
+      <div class="col-sm-7" ng-if="!carModels.length">
+        <label class="checklabel">
+          <span class="text-muted">请选择车型</span>
         </label>
       </div>
     </div>
