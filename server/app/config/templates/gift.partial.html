@@ -1,0 +1,64 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">选择客户</h4>
+</div>
+<div class="modal-body fixed-height">
+  <div class="filter clearfix">
+    <div class="row">
+      <div class="col-sm-9">
+        <form class="form-inline" ng-submit="query()">
+          <div class="form-group mb10 mr10">
+            <label class="control-label text-normal text-nowrap">礼品名称：</label>
+            <input type="text" class="form-control" placeholder="请输入礼品名称" ng-model="params.name" />
+          </div>
+          <div class="mb10 mr10">
+            <button type="submit" class="btn btn-primary ml10" ng-disabled="form.$invalid">
+            <i class="fa fa-search"></i> 搜索
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-3 text-right">
+        <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 新建礼品</a>
+      </div>
+    </div>
+  </div>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>名称</th>
+        <th>供应商</th>
+        <th class="text-right">推荐积分</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-if="loading">
+        <td class="loading-holder" colspan="40">
+          <div class="text-center"><span class="loading"></span></div>
+        </td>
+      </tr>
+      <tr ng-if="!loading &amp;&amp; totalCount === 0">
+        <td colspan="40">
+          <div class="text-center">抱歉，没有相关数据</div>
+        </td>
+      </tr>
+      <tr ng-repeat="item in list">
+        <td>
+          <input type="radio" name="item" ng-click="toggle(item)" />
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.prividerName }}</td>
+        <td class="text-right">{{ item.point }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="text-right">
+    <ul class="pagination-sm" pagination ng-model="params.pageNo" items-per-page="params.pageSize" total-items="params.totalCount" ng-change="query()"></ul>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="processing">{{ confirmText || '确定' }}</button>
+  <button class="btn btn-default" ng-click="$dismiss()">取消</button>
+</div>

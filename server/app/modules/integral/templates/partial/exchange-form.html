@@ -8,8 +8,8 @@
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>客户：</label>
       <div class="col-sm-7">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="请选择客户" ng-model="entity.memberId" required />
-          <div class="input-group-addon">+客户</div>
+          <input type="text" class="form-control" placeholder="请选择客户" ng-model="entity.memberName" required readonly="" />
+          <a class="input-group-addon" href="" ng-click="chooseMember()">+客户</a>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
       <div class="col-sm-7">
         <div class="input-group" ng-if="entity.action === '礼品'">
           <input type="text" class="form-control" placeholder="请选择兑换货品" ng-model="entity.actionContent" required readonly="readonle" />
-          <div class="input-group-addon">+礼品</div>
+          <a class="input-group-addon" href="" ng-click="chooseGift()">+礼品</a>
         </div>
         <select ng-if="entity.action === '服务'" class="form-control" ng-model="entity.actionContent" required ng-options="item for item in serviceTypes" required>
           <option value="">请选择</option>
@@ -46,7 +46,7 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.memberId">
   <span ng-if="!entity.processing">确定</span>
   <span ng-if="entity.processing">处理中...</span>
   </button>

@@ -13,6 +13,7 @@ input[type='password'] { font-family: sans-serif; }
 .text-warning { color: #f49700 !important; }
 .text-danger { color: #e64418 !important; }
 .modal-body-fixed-height { max-height: 460px; overflow: auto; }
+.modal-body.fixed-height { height: 460px; overflow: auto; }
 
 /* angular */
 input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty { border-color: #5cb85c; }

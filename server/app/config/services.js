@@ -53,6 +53,86 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
         growl.addInfoMessage('正在上传：' + parseInt(100 * e.loaded / e.total, 10));
       });
       return deferred.promise;
+    },
+
+    // 通用选择项目
+    selectItems: function (config) {
+      var deferred = $q.defer();
+      $modal.open({
+        templateUrl: config.template,
+        size: config.size || 'lg',
+        controller: ['$scope',
+          function (scope) {
+            scope.title = config.title;
+            scope.items = [].concat(config.items || []);
+            // 分页参数
+            scope.params = {
+              pageNo: 1,
+              pageSize: 20
+            };
+
+            // 列举项目
+            scope.query = function () {
+              return $http({
+                url: config.url,
+                params: angular.extend({
+                  pageNo: 1,
+                  pageSize: 10
+                }, scope.params)
+              }).then(function (res) {
+                scope.list = res.list;
+                scope.params.totalCount = res.totalCount;
+              });
+            };
+
+            // 过滤
+            scope.filter = function () {
+              scope.params.pageNo = 1;
+              return scope.query();
+            };
+
+            // 开始查询
+            scope.query();
+
+            // 根据ID检索
+            scope.indexOf = function (item) {
+              for (var i = 0; i < scope.items.length; i++) {
+                if (String(item[config.key || 'id']) === String(scope.items[i][config.key || 'id'])) {
+                  return i;
+                }
+              }
+              return -1;
+            };
+
+            // 选择或反选
+            scope.toggle = function (item) {
+              if (config.single) {
+                scope.items[0] = item;
+              }
+              else {
+                var index = scope.indexOf(item);
+                if (index === -1) {
+                  scope.items.push(item);
+                }
+                else {
+                  scope.items.splice(index, 1);
+                }
+              }
+            };
+
+            // 最终结果数组
+            scope.confirm = function () {
+              if (scope.items.length === 0) {
+                return growl.addErrorMessage('尚未选择数据');
+              }
+              deferred.resolve(config.single ? scope.items[0] : scope.items);
+              scope.$close();
+            };
+          }
+        ]
+      });
+
+      return deferred.promise;
     }
 
   };
