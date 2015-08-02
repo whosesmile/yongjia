@@ -34,7 +34,7 @@
     <div class="form-group">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>所需积分：</label>
       <div class="col-sm-7">
-        <input type="text" class="form-control" placeholder="请输入积分数量" ng-model="entity.memberId" required ng-readonly="entity.action=='礼品'" />
+        <input type="text" class="form-control" placeholder="请输入积分数量" ng-model="entity.point" required ng-readonly="entity.action=='礼品'" />
       </div>
     </div>
     <div class="form-group">
@@ -46,7 +46,7 @@
   </form>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.img || !entity.carModelIds.length">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing">
   <span ng-if="!entity.processing">确定</span>
   <span ng-if="entity.processing">处理中...</span>
   </button>

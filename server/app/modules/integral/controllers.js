@@ -86,6 +86,17 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
           scope.entity = {
             action: '礼品'
           };
+
+          scope.confirm = function () {
+            exchangeService.exchange(scope.entity).then(function (data) {
+              scope.$close();
+              $scope.pageNo = 1;
+              $scope.query();
+              growl.addSuccessMessage(scope.title + '成功！');
+            }, function (rej) {
+              growl.addErrorMessage(rej.message || scope.title + '失败！');
+            });
+          };
         }
       ]
     });

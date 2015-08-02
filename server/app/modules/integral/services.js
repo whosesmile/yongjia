@@ -37,13 +37,11 @@ messageModule.factory('exchangeService', function (serviceGenerator, $http) {
     remove: '/web/point/delete',
     toggle: '/web/point/toggle'
   }).methods({
-    exchange: function (id) {
+    exchange: function (data) {
       return $http({
-        url: '/web/point/exchange',
+        url: '/web/point/addExchange',
         method: 'post',
-        data: {
-          id: id
-        }
+        data: data
       });
     }
   });
