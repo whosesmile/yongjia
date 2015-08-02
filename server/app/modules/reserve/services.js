@@ -1,11 +1,17 @@
 reserveModule.factory('recordService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
-    query: '/web/appointment/list',
-    create: '/user/web/user/save.json',
-    update: '/user/web/user/update.json',
-    remove: '/user/web/user/delete.json',
-    toggle: '/user/web/user/toggle.json'
+    query: '/web/appointment/list'
   }).methods({
-
+    setStatus: function (id, status, arriveTime) {
+      return $http({
+        url: '/web/appointment/setStatus',
+        method: 'post',
+        data: {
+          id: id,
+          status: status,
+          arriveTime: arriveTime
+        }
+      });
+    }
   });
 });

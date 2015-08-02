@@ -5,17 +5,14 @@
   <div class="row">
     <div class="col-sm-9"></div>
     <div class="col-sm-3 text-right">
-      <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 为客户预约</a>
+      <a class="btn btn-success" ng-click="addRecord()"><i class="fa fa-plus"></i> 为客户预约</a>
     </div>
   </div>
 </div>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>序列号</th>
       <th>头像</th>
-      <th>微信昵称</th>
-      <th>openId</th>
       <th>姓名</th>
       <th>手机号</th>
       <th>称呼</th>
@@ -25,7 +22,8 @@
       <th>预约日期</th>
       <th>到店时间</th>
       <th>更新时间</th>
-      <th class="text-right">状态</th>
+      <th>状态</th>
+      <th class="text-right">操作</th>
     </tr>
   </thead>
   <tbody>
@@ -40,23 +38,36 @@
       </td>
     </tr>
     <tr ng-repeat="item in list">
-      <td>{{ item.id }}</td>
-      <td>{{ item.a }}</td>
-      <td>{{ item.b }}</td>
-      <td>{{ item.a }}</td>
-      <td>{{ item.a }}</td>
+      <td><img ng-src="{{ item.headimgurl }}" width="30" height="30" /></td>
+      <td>{{ item.name }}</td>
       <td>{{ item.connectPhone }}</td>
-      <td>{{ item.a }}</td>
-      <td>{{ item.a }}</td>
+      <td>{{ item.sex|gender }}</td>
+      <td>{{ item.memberStatus|isCarOwner }}</td>
       <td>{{ item.type|reserveType }}</td>
       <td>{{ item.carType }}</td>
       <td>{{ item.appointTime|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td>{{ item.arriveTime|date:'yyyy-MM-dd HH:mm:ss' }}</td>
-      <td>{{ item.a }}</td>
-      <td>{{ item.a }}</td>
+      <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td>{{ item.status|reserveStatus }}</td>
+      <td class="actions text-right">
+        <span ng-if="item.status === 0">
+          <a href="" ng-click="confirm(item)">确认</a>
+          <a href="" ng-click="cancel(item)">取消</a>
+        </span>
+        <span ng-if="item.status === 1">
+          <a href="" ng-click="finish(item)">完成</a>
+          <a href="" ng-click="cancel(item)">取消</a>
+        </span>
+        <span ng-if="item.status === 2">
+          <a href="" class="disabled">已完成</a>
+        </span>
+        <span ng-if="item.status === 3">
+          <a href="" class="disabled">已取消</a>
+        </span>
+      </td>
     </tr>
   </tbody>
 </table>
 <div class="text-right">
-  <ul class="pagination-sm" pagination ng-model="page" items-per-page="size" total-items="total" ng-change="query()"></ul>
+  <ul class="pagination-sm" pagination ng-model="pageNo" items-per-page="pageSize" total-items="totalCount" ng-change="query()"></ul>
 </div>
