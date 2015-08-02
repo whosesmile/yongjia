@@ -96,13 +96,6 @@ var serialize = function (obj) {
             query += serialize(innerObj) + '&';
           }
         }
-        // var temp = [];
-        // for (i = 0; i < value.length; ++i) {
-        //   if (value[i] !== undefined && value[i] !== null) {
-        //     temp.push(value[i]);
-        //   }
-        // }
-        // query += encodeURIComponent(name) + '=' + JSON.stringify(temp) + '&';
       }
       else if (value instanceof Object) {
         for (subName in value) {
@@ -115,7 +108,7 @@ var serialize = function (obj) {
           }
         }
       }
-      else if (value !== undefined && value !== null) {
+      else if (value !== undefined && value !== null && value !== '') {
         query += encodeURIComponent(name) + '=' + encodeURIComponent(value) + '&';
       }
     }

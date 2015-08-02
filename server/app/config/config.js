@@ -126,9 +126,8 @@ app.config(function ($httpProvider) {
           }
           // 约定的没权限
           if (res.code === 403) {
-            $injector.get('$state').go('noauth');
             return $q.reject({
-              message: '你无权进行相关操作'
+              message: (res.data && res.data.message) || '你无权进行相关操作'
             });
           }
 

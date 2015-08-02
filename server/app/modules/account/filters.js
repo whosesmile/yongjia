@@ -37,3 +37,27 @@ app.filter('memberCarStatus', function () {
     return status[input] || '未知状态';
   };
 });
+
+// 购车类别
+app.filter('buyType', function () {
+  var status = ['首次', '增购', '换购'];
+  return function (input) {
+    return status[input] || '未知';
+  };
+});
+
+// 购车用途
+app.filter('buyFor', function () {
+  var status = ['家用', '商用', '其他'];
+  return function (input) {
+    return status[input] || '未知';
+  };
+});
+
+// 购车支付方式
+app.filter('paytype', function () {
+  var status = ['全款', '贷款'];
+  return function (input) {
+    return status[input] || '未知';
+  };
+});

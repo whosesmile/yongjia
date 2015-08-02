@@ -56,7 +56,7 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
         templateUrl: 'modules/account/templates/partial/verifycar.html',
         controller: ['$scope',
           function (scope) {
-            scope.list = data.entity.filter(function (item) {
+            scope.list = data.list.filter(function (item) {
               return item.status === 0;
             });
 
@@ -91,9 +91,12 @@ accountModule.controller('memberController', function ($scope, $state, $modal, g
 accountModule.controller('visitorController', function ($scope, $state, $modal, growl, visitorService, controllerGenerator, $q) {
   controllerGenerator($scope, visitorService, {
     title: '潜客用户',
-    property: 'name',
-    createTemplate: 'modules/account/templates/partial/create-user-form.html',
-    updateTemplate: 'modules/account/templates/partial/update-user-form.html',
     autoload: true
   });
+
+  $scope.params = {};
+
+  $scope.searchParams = function () {
+    return $scope.params;
+  };
 });

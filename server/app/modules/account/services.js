@@ -55,7 +55,7 @@ accountModule.factory('memberService', function (serviceGenerator, $http) {
 
 accountModule.factory('visitorService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
-    query: '1',
+    query: '/web/customer/list',
     create: '1',
     update: '1',
     remove: '1',
