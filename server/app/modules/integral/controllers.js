@@ -78,10 +78,16 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
   });
 
   $scope.exchange = function (item) {
-    dialog.confirm('<h4>确定兑换吗？</h4>', function () {
-      exchangeService.exchange(item.id).then(function () {
-        growl.addSuccessMessage('兑换成功');
-      });
+    $modal.open({
+      templateUrl: 'modules/integral/templates/partial/exchange-form.html',
+      controller: ['$scope',
+        function (scope) {
+          scope.title = '兑换礼品';
+          scope.entity = {
+            action: '礼品'
+          };
+        }
+      ]
     });
   };
 });
@@ -95,4 +101,29 @@ integralModule.controller('historyController', function ($scope, $state, $modal,
     updateTemplate: '',
     autoload: true
   });
+
+  // 为客户修改积分
+  $scope.change = function () {
+    $modal.open({
+      templateUrl: 'modules/integral/templates/partial/change-form.html',
+      controller: ['$scope',
+        function (scope) {
+          scope.title = '修改客户积分';
+          scope.entity = {
+            action: '预约'
+          };
+          scope.confirm = function () {
+            historyService.addPoint(scope.entity).then(function (data) {
+              scope.$close();
+              $scope.pageNo = 1;
+              $scope.query();
+              growl.addSuccessMessage(scope.title + '成功！');
+            }, function (rej) {
+              growl.addErrorMessage(rej.message || scope.title + '失败！');
+            });
+          };
+        }
+      ]
+    });
+  };
 });

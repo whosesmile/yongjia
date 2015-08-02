@@ -3,12 +3,25 @@
 </div>
 <div class="filter clearfix">
   <div class="row">
-    <div class="col-sm-9"></div>
+    <div class="col-sm-9">
+      <form class="form-inline" ng-submit="query()">
+        <div class="form-group mb10 mr10">
+          <label class="control-label text-normal text-nowrap">礼品名称：</label>
+          <input type="text" class="form-control" placeholder="请输入礼品名称" ng-model="params.name" />
+        </div>
+        <div class="mb10 mr10">
+          <button type="submit" class="btn btn-primary ml10" ng-disabled="form.$invalid">
+          <i class="fa fa-search"></i> 搜索
+          </button>
+        </div>
+      </form>
+    </div>
     <div class="col-sm-3 text-right">
       <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 新建礼品</a>
     </div>
   </div>
 </div>
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -28,7 +41,7 @@
         <div class="text-center"><span class="loading"></span></div>
       </td>
     </tr>
-    <tr ng-if="total === 0">
+    <tr ng-if="!loading &amp;&amp; totalCount === 0">
       <td colspan="40">
         <div class="text-center">抱歉，没有相关数据</div>
       </td>

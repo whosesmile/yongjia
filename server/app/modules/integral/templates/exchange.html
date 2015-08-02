@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-sm-9"></div>
     <div class="col-sm-3 text-right">
-      <a class="btn btn-success" ng-click="create()"><i class="fa fa-plus"></i> 为客户兑换</a>
+      <a class="btn btn-success" ng-click="exchange()"><i class="fa fa-plus"></i> 为客户兑换</a>
     </div>
   </div>
 </div>
@@ -13,20 +13,14 @@
   <thead>
     <tr>
       <th>头像</th>
-      <th>微信昵称</th>
-      <th>openId</th>
       <th>姓名</th>
       <th>手机号</th>
       <th>称呼</th>
       <th>是否车主</th>
       <th>兑换类型</th>
       <th>兑换货品</th>
-      <th>所需积分</th>
-      <th>兑换数量</th>
       <th>扣除积分</th>
-      <th>更新时间</th>
-      <th>状态</th>
-      <th class="text-right">操作</th>
+      <th class="text-right">兑换时间</th>
     </tr>
   </thead>
   <tbody>
@@ -35,30 +29,21 @@
         <div class="text-center"><span class="loading"></span></div>
       </td>
     </tr>
-    <tr ng-if="total === 0">
+    <tr ng-if="!loading &amp;&amp; totalCount === 0">
       <td colspan="40">
         <div class="text-center">抱歉，没有相关数据</div>
       </td>
     </tr>
     <tr ng-repeat="item in list">
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td>{{ item.id }}</td>
-      <td class="actions text-right">
-        <a class="action" href="" ng-click="exchange(item)">兑换</a>
-        <a class="action" href="">取消</a>
-      </td>
+      <td><img ng-src="{{ item.headimgurl }}" width="30" height="30" /></td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.mobile }}</td>
+      <td>{{ item.sex|gender }}</td>
+      <td>{{ item.status|isCarOwner }}</td>
+      <td>{{ item.action }}</td>
+      <td>{{ item.actionContent }}</td>
+      <td>{{ item.point }}</td>
+      <td class="text-right">{{ item.createAt|date:'yyyy-MM-dd' }}</td>
     </tr>
   </tbody>
 </table>

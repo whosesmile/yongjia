@@ -13,3 +13,11 @@ app.filter('integralStatus', function () {
     return status[input];
   };
 });
+
+// 是否车主
+app.filter('isCarOwner', function () {
+  var binds = ['', '否', '是'];
+  return function (input) {
+    return input ? binds[input] : '';
+  };
+});

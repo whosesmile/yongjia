@@ -51,12 +51,18 @@ messageModule.factory('exchangeService', function (serviceGenerator, $http) {
 
 messageModule.factory('historyService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
-    query: '1',
+    query: '/web/point/listPoint',
     create: '1',
     update: '1',
     remove: '1',
     toggle: '1'
   }).methods({
-
+    addPoint: function (data) {
+      return $http({
+        url: '/web/point/addPoint',
+        method: 'post',
+        data: data
+      });
+    }
   });
 });

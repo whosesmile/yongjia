@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <form class="form-horizontal" name="form">
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>客户：</label>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="请选择客户" ng-model="entity.memberId" required />
+          <div class="input-group-addon">+客户</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>兑换类型：</label>
+      <div class="col-sm-7">
+        <select class="form-control" ng-model="entity.action" required ng-options="item for item in exchangeType" required ng-change="entity.actionContent=''"></select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>兑换货品：</label>
+      <div class="col-sm-7">
+        <div class="input-group" ng-if="entity.action === '礼品'">
+          <input type="text" class="form-control" placeholder="请选择兑换货品" ng-model="entity.actionContent" required readonly="readonle" />
+          <div class="input-group-addon">+礼品</div>
+        </div>
+        <select ng-if="entity.action === '服务'" class="form-control" ng-model="entity.actionContent" required ng-options="item for item in serviceTypes" required>
+          <option value="">请选择</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>所需积分：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="请输入积分数量" ng-model="entity.memberId" required ng-readonly="entity.action=='礼品'" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3">备注信息：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" placeholder="请输入备注信息" ng-model="entity.priceMost" name="priceMost" />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.img || !entity.carModelIds.length">
+  <span ng-if="!entity.processing">确定</span>
+  <span ng-if="entity.processing">处理中...</span>
+  </button>
+  <button class="btn btn-default" ng-click="$dismiss()">取消</button>
+</div>

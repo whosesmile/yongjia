@@ -26,7 +26,7 @@
         <div class="text-center"><span class="loading"></span></div>
       </td>
     </tr>
-    <tr ng-if="total === 0">
+    <tr ng-if="!loading &amp;&amp; totalCount === 0">
       <td colspan="40">
         <div class="text-center">抱歉，没有相关数据</div>
       </td>
