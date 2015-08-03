@@ -14,6 +14,7 @@ input[type='password'] { font-family: sans-serif; }
 .text-danger { color: #e64418 !important; }
 .modal-body-fixed-height { max-height: 460px; overflow: auto; }
 .modal-body.fixed-height { height: 460px; overflow: auto; }
+*[dropdown] { position: relative; }
 
 /* angular */
 input.ng-valid.ng-dirty, textarea.ng-valid.ng-dirty { border-color: #5cb85c; }

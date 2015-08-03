@@ -22,15 +22,19 @@
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>预约时间：</label>
+      <label class="control-label col-sm-3 text-normal text-nowrap"><i class="text-danger">*</i>预约时间：</label>
       <div class="col-sm-7">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="请输入预约时间" ng-model="entity.arriveTime" is-open="time1Opened" required datepicker-popup="yyyy-MM-dd" readonly />
-          <a class="input-group-addon" ng-click="time1Opened=true;$event.stopPropagation();"><i class="fa fa-calendar"></i></a>
+        <div dropdown>
+          <div class="input-group" data-toggle="dropdown" dropdown-toggle>
+            <input type="text" class="form-control" placeholder="请输入预约时间" value="{{ entity.arriveTime|date:'yyyy-MM-dd HH:mm:ss' }}" required readonly />
+            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+          </div>
+          <div class="dropdown-menu">
+            <datetimepicker ng-model="entity.arriveTime" /></datetimepicker>
+          </div>
         </div>
       </div>
     </div>
-
     <span ng-if="entity.type === 1">
       <div class="form-group">
         <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>车主车辆：</label>
@@ -116,13 +120,13 @@
     <div class="form-group">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>联系电话：</label>
       <div class="col-sm-7">
-        <input type="tel" class="form-control" placeholder="请输入联系电话" ng-model="entity.connectPhone" required maxlength="11" />
+        <input type="tel" class="form-control" placeholder="请输入联系电话" ng-model="entity.connectPhone" required maxlength="11" ng-pattern="/^\d{11}$/" />
       </div>
     </div>
   </form>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.memberId">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.memberId || !entity.arriveTime">
   <span ng-if="!entity.processing">确定</span>
   <span ng-if="entity.processing">处理中...</span>
   </button>

@@ -11,7 +11,7 @@
         </div>
         <div class="form-group mb10 mr10">
           <label class="control-label text-normal text-nowrap">手机号：</label>
-          <input type="tel" class="form-control" placeholder="请输入手机" ng-model="params.mobile" maxlength="11" />
+          <input type="tel" class="form-control" placeholder="请输入手机" ng-model="params.mobile" maxlength="11" ng-pattern="/^\d{11}$/" />
         </div>
         <div class="mb10 mr10">
           <button type="submit" class="btn btn-primary ml10" ng-disabled="form.$invalid">
