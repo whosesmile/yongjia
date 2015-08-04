@@ -16,6 +16,32 @@ messageModule.factory('pollService', function (serviceGenerator, $http) {
   });
 });
 
+messageModule.factory('signinService', function ($http) {
+  return {
+    getConfig: function (month) {
+      return $http({
+        url: '/web/pool/getSignConfig',
+        method: 'get',
+        params: {
+          month: month
+        }
+      });
+    },
+
+    setConfig: function (month, times, point) {
+      return $http({
+        url: '/web/pool/setSignConfig',
+        method: 'post',
+        data: {
+          month: month,
+          times: times,
+          point: point
+        }
+      });
+    }
+  };
+});
+
 messageModule.factory('giftService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
     query: '/web/gift/list',

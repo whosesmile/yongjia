@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>签到管理</h1>
+</div>
+<div class="calendar clearfix">
+  <div class="filter clearfix">
+    <div class="form-group pull-left mr10">
+      <label class="control-label text-normal text-nowrap">选择年份：</label>
+      <select class="form-control" ng-model="year" ng-options="item for item in years"></select>
+    </div>
+    <div class="form-group pull-left mr10">
+      <label class="control-label text-normal text-nowrap">选择月份：</label>
+      <select class="form-control" ng-model="month" ng-options="item as item + 1 + '月' for item in monthes"></select>
+    </div>
+  </div>
+  <div class="item" ng-repeat="item in days">
+    <span>{{ item }}次</span>
+    <input type="text" value="{{ config[$index].point }}" class="text-center" ng-blur="setConfig($event, item)" max-length="3" />
+  </div>
+</div>

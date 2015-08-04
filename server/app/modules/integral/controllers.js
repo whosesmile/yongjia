@@ -34,6 +34,54 @@ integralModule.controller('pollController', function ($scope, $state, $modal, gr
 
 });
 
+integralModule.controller('signinController', function ($scope, $state, $modal, growl, signinService) {
+
+  $scope.scores = [];
+
+  var date = new Date();
+  var year = date.getFullYear();
+  var dayOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  var range = function (limit) {
+    var days = [];
+    for (var i = 1; i <= limit; i++) {
+      days.push(i);
+    }
+    return days;
+  };
+
+  // 未来5年
+  $scope.years = [year, year + 1, year + 2, year + 3, year + 4];
+  $scope.monthes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+  $scope.year = date.getFullYear();
+  $scope.month = date.getMonth();
+  $scope.days = range(dayOfMonth[date.getMonth()]);
+
+  $scope.$watch('year+month', function (year) {
+    var year = $scope.year;
+    var month = $scope.month;
+    $scope.days = range(dayOfMonth[month]);
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+      $scope.days = range(29);
+    }
+
+    // 签到服务
+    signinService.getConfig(year + '-' + (month + 1)).then(function (data) {
+      $scope.config = data.list;
+    });
+  });
+
+  $scope.setConfig = function (e, times) {
+    var point = e.target.value;
+    signinService.setConfig($scope.year + '-' + ($scope.month + 1), times, point).then(function (data) {
+      growl.addSuccessMessage('签到积分设置成功');
+    }, function (rej) {
+      growl.addErrorMessage(rej.message || '签到积分设置失败');
+    });
+  };
+
+});
+
 integralModule.controller('giftController', function ($scope, $state, $modal, growl, giftService, controllerGenerator, $q, commonService) {
   // 给$scope添加标准化CRUD操作
   controllerGenerator($scope, giftService, {

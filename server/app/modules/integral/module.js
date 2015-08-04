@@ -17,6 +17,11 @@ integralModule.config(function ($stateProvider, $urlRouterProvider) {
       templateUrl: "modules/integral/templates/poll.html",
       controller: 'pollController'
     })
+    .state('integral.signin', {
+      url: '/signin',
+      templateUrl: "modules/integral/templates/signin.html",
+      controller: 'signinController'
+    })
     .state('integral.gift', {
       url: '/gift',
       templateUrl: "modules/integral/templates/gift.html",
