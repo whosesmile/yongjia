@@ -12,6 +12,11 @@ settingsModule.config(function ($stateProvider, $urlRouterProvider) {
       "abstract": true,
       template: "<div ui-view></div>"
     })
+    .state('settings.cartype', {
+      url: '/cartype',
+      templateUrl: "modules/settings/templates/cartype.html",
+      controller: 'cartypeController'
+    })
     .state('settings.vehicle', {
       url: '/vehicle',
       templateUrl: "modules/settings/templates/vehicle.html",

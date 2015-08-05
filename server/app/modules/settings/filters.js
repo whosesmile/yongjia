@@ -5,3 +5,11 @@ app.filter('vehicleStatus', function () {
     return status[input];
   };
 });
+
+// 状态
+app.filter('carFrom', function () {
+  var status = ['国产', '进口'];
+  return function (input) {
+    return status[input];
+  };
+});

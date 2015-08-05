@@ -54,6 +54,25 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
       });
       return deferred.promise;
     },
+    // 仅支持上传单一文件
+    uploadFile: function ($files) {
+      var deferred = $q.defer();
+      var file = $files[0];
+      $injector.get('$upload').upload({
+        url: '/web/car/importCarModelExcel',
+        method: 'POST',
+        file: file
+      }).then(function (res) {
+        deferred.resolve(res.entity);
+        growl.addSuccessMessage('上传成功');
+      }, function (rej) {
+        growl.addErrorMessage(rej.message || '上传失败');
+        deferred.reject(rej);
+      }, function (e) {
+        growl.addInfoMessage('正在上传：' + parseInt(100 * e.loaded / e.total, 10));
+      });
+      return deferred.promise;
+    },
 
     // 通用选择项目
     selectItems: function (config) {

@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <form class="form-horizontal" name="form">
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>选择车型：</label>
+      <div class="col-sm-7">
+        <select class="form-control" ng-model="cartype" required ng-options="item as item.carTypeName for item in list">
+          <option value="">请选择</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>上传参数：</label>
+      <div class="col-sm-7">
+        <div class="upload">
+          <a class="btn btn-success">+上传Excel参数配置</a>
+          <input type="file" class="file" ng-file-select="uploadFile($files)" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="confirm()" ng-disabled="form.$invalid || entity.processing || !entity.typeId || !entity.paramsStr">
+  <span ng-if="!entity.processing">确定</span>
+  <span ng-if="entity.processing">处理中...</span>
+  </button>
+  <button class="btn btn-default" ng-click="$dismiss()">取消</button>
+</div>

@@ -236,8 +236,11 @@ app.value('menubar', [
   {
     "name": "系统参数",
     "menus": [{
+      "sref": "#/settings/cartype",
+      "name": "车型管理",
+    },{
       "sref": "#/settings/vehicle",
-      "name": "车型参数",
+      "name": "车款参数",
     }]
   },
 
