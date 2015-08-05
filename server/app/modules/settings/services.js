@@ -2,8 +2,8 @@ settingsModule.factory('cartypeService', function (serviceGenerator, $http) {
   return serviceGenerator().actions({
     query: '/common/getCarType',
     create: '/web/car/addCarType',
-    update: '',
-    remove: '',
+    update: '/web/car/updateCarType',
+    remove: '/web/car/deleteCarType',
     toggle: ''
   }).methods({
 

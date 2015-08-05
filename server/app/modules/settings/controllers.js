@@ -2,7 +2,7 @@ settingsModule.controller('cartypeController', function ($scope, $state, $modal,
   // 给$scope添加标准化CRUD操作
   controllerGenerator($scope, cartypeService, {
     title: '车型',
-    property: 'name',
+    property: 'carTypeName',
     createTemplate: 'modules/settings/templates/partial/cartype-form.html',
     updateTemplate: 'modules/settings/templates/partial/cartype-form.html',
     autoload: true

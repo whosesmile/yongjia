@@ -33,9 +33,13 @@
       <td>{{ item.id }}</td>
       <td>{{ item.carTypeName }}</td>
       <td>{{ item.importFlag|carFrom  }}</td>
-      <td class="actions text-right">
+      <td class="actions text-right" ng-if="item.canEditFlag === 0">
         <a href="" ng-click="update(item)">编辑</a>
         <a href="" ng-click="remove(item)">删除</a>
+      </td>
+      <td class="actions text-right" ng-if="item.canEditFlag !== 0">
+        <a href="" class="disabled">编辑</a>
+        <a href="" class="disabled">删除</a>
       </td>
     </tr>
   </tbody>
