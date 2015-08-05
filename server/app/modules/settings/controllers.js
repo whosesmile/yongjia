@@ -40,4 +40,18 @@ settingsModule.controller('vehicleController', function ($scope, $state, $modal,
       }
     }
   });
+
+  $scope.details = function (item) {
+    $modal.open({
+      templateUrl: 'modules/settings/templates/partial/vehicle-details.html',
+      size: 'lg',
+      controller: ['$scope',
+        function (scope) {
+          scope.title = '追加积分';
+          scope.list = JSON.parse(item.params);
+          console.log(scope.list)
+        }
+      ]
+    });
+  };
 });

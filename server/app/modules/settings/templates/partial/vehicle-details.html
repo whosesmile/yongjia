@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <a class="close" ng-click="$dismiss()">&times;</a>
+  <h4 class="modal-title">{{ title }}</h4>
+</div>
+<div class="modal-body modal-body-fixed-height">
+  <div ng-repeat="group in list" style="margin-bottom:15px;border-bottom:1px solid #ddd;">
+    <h4 style="margin-bottom:15px;">{{ group.name }}</h4>
+    <div class="form-group" ng-repeat="item in group.value">
+      <label class="control-label text-normal text-nowrap col-sm-3">{{ item.name }}：</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" readonly="readonly" value="{{ item.value }}" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-default" ng-click="$dismiss()">确定</button>
+</div>
