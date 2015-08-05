@@ -34,7 +34,7 @@ settingsModule.controller('vehicleController', function ($scope, $state, $modal,
         scope.$watch('cartype', function (item) {
           if (item) {
             scope.entity.typeId = item.id;
-            scope.entity.typeNmae = item.carTypeName;
+            scope.entity.typeName = item.carTypeName;
           }
         });
       }
