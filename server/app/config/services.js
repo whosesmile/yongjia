@@ -62,8 +62,8 @@ app.factory('commonService', function ($q, $http, $injector, $modal, growl) {
         url: '/web/car/importCarModelExcel',
         method: 'POST',
         file: file
-      }).then(function (res) {
-        deferred.resolve(res.entity);
+      }).then(function (data) {
+        deferred.resolve(data);
         growl.addSuccessMessage('上传成功');
       }, function (rej) {
         growl.addErrorMessage(rej.message || '上传失败');
