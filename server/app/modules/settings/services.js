@@ -16,7 +16,7 @@ settingsModule.factory('vehicleService', function (serviceGenerator, $http) {
     create: '/web/car/importCarModel',
     update: '',
     remove: '',
-    toggle: ''
+    toggle: '/web/car/toggleCarModel'
   }).methods({
 
   });
