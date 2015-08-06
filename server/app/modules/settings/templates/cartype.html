@@ -14,6 +14,7 @@
     <tr>
       <th>序列号</th>
       <th>名称</th>
+      <th>颜色</th>
       <th>是否进口</th>
       <th class="text-right">操作</th>
     </tr>
@@ -32,14 +33,12 @@
     <tr ng-repeat="item in list">
       <td>{{ item.id }}</td>
       <td>{{ item.carTypeName }}</td>
+      <td>{{ item.colors }}</td>
       <td>{{ item.importFlag|carFrom  }}</td>
-      <td class="actions text-right" ng-if="item.canEditFlag === 0">
+      <td class="actions text-right">
         <a href="" ng-click="update(item)">编辑</a>
-        <a href="" ng-click="remove(item)">删除</a>
-      </td>
-      <td class="actions text-right" ng-if="item.canEditFlag !== 0">
-        <a href="" class="disabled">编辑</a>
-        <a href="" class="disabled">删除</a>
+        <a href="" ng-click="remove(item)" ng-if="item.canEditFlag === 0">删除</a>
+        <a href="" class="disabled" ng-if="item.canEditFlag !== 0">删除</a>
       </td>
     </tr>
   </tbody>

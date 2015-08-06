@@ -73,7 +73,7 @@ app.directive('csAnimate', function () {
     restrict: 'A',
     replace: false,
     link: function (scope, element, attrs) {
-      var actions = ['swing', 'pulse', 'flip', 'tada', 'bounce', 'bounceIn'];
+      var actions = ['swing', 'pulse', 'flip', 'tada', 'bounce', 'bounceIn', 'shake', 'wobble', 'fadeInDown', 'zoomIn', 'rollIn'];
       var animate = actions[Math.floor(actions.length * Math.random(0, 1))];
       $(element).addClass('animated').addClass(animate);
     }
