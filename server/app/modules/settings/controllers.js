@@ -47,7 +47,7 @@ settingsModule.controller('vehicleController', function ($scope, $state, $modal,
       size: 'lg',
       controller: ['$scope',
         function (scope) {
-          scope.title = '追加积分';
+          scope.title = '参数详情';
           scope.list = JSON.parse(item.params);
           console.log(scope.list)
         }
