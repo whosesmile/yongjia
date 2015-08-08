@@ -205,3 +205,6 @@ footer.bar nav a:active span, footer.bar nav a.active span { color: #f89432; }
 .popup { background: #fff; height: 800px; max-height: 65%; position: fixed; bottom: 0; width: 100%; max-width: 750px; overflow: hidden; }
 .popup > .title { line-height: 95px; height: 96px; width: 100%; max-width: 750px; background: #fff; border-bottom: 1px solid #ddd; z-index: 2000; }
 .popup > .panel { position: absolute; top: 96px; left: 0; right: 0; bottom: 0; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
+.list.method { position: relative; }
+.list.method .item { background-color: rgba(40, 164, 224, 0.9); color: #fff; border-color: rgba(0, 0, 0, 0.8); }
+.list.method .icon-close { position: absolute; right: 30px; top: -45px; z-index: 100; }

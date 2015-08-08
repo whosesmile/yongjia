@@ -10,6 +10,11 @@ nav.blocks .menu .icon-plus { margin-top: 52px; }
 nav.blocks .menu .icon-checked { position: absolute; right: 0; bottom: 0; display: none; }
 nav.blocks .menu.active .icon-checked { display: block; }
 nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
+.rewrite { overflow: hidden; }
+.rewrite * { line-height: 1.3rem !important; margin-bottom: 15px !important; font-size: 0.9rem !important; font-style: normal !important; font-family: inherit !important; }
+.rewrite img { display: block; width: 100%; margin-bottom: 15px; }
+.rewrite a[href] { color: #007cff !important; }
+.rewrite p { margin-bottom: 20px; text-indent: 1rem !important; }
 
 /* 个人主页 */
 .profile .banner { position: relative; padding-top: 35px; height: 300px; background: transparent url(../images/profile/bg.jpg) 0 0 no-repeat; background-size: cover; }
@@ -20,6 +25,8 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .profile .banner .nav a:first-child { border-right: 1px solid rgba(255, 255, 255, 0.5); }
 .profile .banner .nav a .icon { margin-top: -8px; }
 .profile .banner { margin-bottom: 40px; }
+.profile .item { height: 130px; line-height: 130px; }
+.profile .item .icon:first-child { margin-right: 30px; margin-top: -8px; }
 
 /* 展厅 */
 .showcase .box h3 { line-height: 80px; height: 80px; padding: 0 30px; }
@@ -51,14 +58,25 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 /* 礼品详情 */
 .gift .banner { height: 420px; overflow: hidden; }
 .gift img { display: block; width: 100%; }
-.gift h3 { line-height: 90px; border-bottom: 1px solid #ddd; padding: 0 30px; }
+.gift h3 { line-height: 120px; border-bottom: 1px solid #ddd; padding: 0 30px; }
+.gift h3 a { padding-top: 20px; line-height: normal; }
+.gift h3 a span { display: block; }
 .gift .details { background-color: #fff; }
 .gift .details .desc { line-height: 1.4rem; padding: 30px; }
 .gift .details .desc p { margin-bottom: 20px; text-indent: 1rem; }
 
 /* 消息中心 */
-.notices .item .title { width: 600px; }
-.notices .action { position: absolute; right: 0; top: 0; padding: 0 30px; }
+.notices .item { height: 160px; padding-top: 25px; padding-bottom: 25px; }
+.notices .item.item-thumbnail { padding-top: 0; padding-bottom: 0; }
+.notices .item h3 { margin-bottom: 10px; }
+.notices .item.item-thumbnail h3 { margin-top: 28px; }
+.notices .item small { display: block; height: 60px; overflow: hidden; line-height: 1.2; }
+
+/* 消息详情 */
+.notice h4 { margin-top: 10px; }
+.notice .banner { margin-top: 20px; }
+.notice img { display: block; width: 100%; }
+.notice .details { margin-top: 20px; }
 
 /* 签到 */
 .signin .summary { background: #fff; margin: 30px; text-align: center; height: 120px; border: 1px solid #ddd; }
@@ -113,3 +131,15 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .details .banner .tips { position: absolute; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.6); color: #fff; padding: 10px 20px; }
 .details .name { border-bottom: 1px solid #ddd; padding: 50px 30px }
 .details .name h1 { margin-bottom: 15px; }
+
+/* 我的积分 */
+.points .item { height: 140px; padding-top: 30px; padding-bottom: 30px; }
+.points .status { margin-top: 20px; }
+.points .item .name span:first-child { font-size: 0.9rem; }
+
+/* 我的预约 */
+.reserve .item { height: auto; font-size: 0.9rem; }
+.reserve .item .summary { line-height: 100px; }
+.reserve .name { display: inline-block; min-width: 280px; }
+.reserve .item .details { display: none; border-top: 1px solid #ddd; padding-top: 20px; padding-bottom: 20px; line-height: 1.2rem; }
+.reserve .item.active .details { display: block; }

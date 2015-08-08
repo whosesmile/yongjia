@@ -1,4 +1,5 @@
 .icon-checked { width: 38px; height: 38px; background-image: url(../images/icons/checked.png);}
+.icon-close { width: 57px; height: 57px; background-image: url(../images/icons/close.png);}
 .icon-dollar { width: 30px; height: 30px; background-image: url(../images/icons/dollar.png);}
 .icon-edit { width: 28px; height: 28px; background-image: url(../images/icons/edit.png);}
 .icon-email { width: 38px; height: 26px; background-image: url(../images/icons/email.png);}
@@ -9,11 +10,14 @@
 .icon-nav-buy { width: 117px; height: 117px; background-image: url(../images/icons/nav-buy.png);}
 .icon-nav-car { width: 117px; height: 117px; background-image: url(../images/icons/nav-car.png);}
 .icon-nav-contrast { width: 117px; height: 117px; background-image: url(../images/icons/nav-contrast.png);}
+.icon-nav-gift-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-gift-small.png);}
 .icon-nav-gift { width: 117px; height: 117px; background-image: url(../images/icons/nav-gift.png);}
 .icon-nav-help { width: 117px; height: 117px; background-image: url(../images/icons/nav-help.png);}
 .icon-nav-love { width: 117px; height: 117px; background-image: url(../images/icons/nav-love.png);}
 .icon-nav-maintain { width: 117px; height: 117px; background-image: url(../images/icons/nav-maintain.png);}
+.icon-nav-msg-small { width: 84px; height: 84px; background-image: url(../images/icons/nav-msg-small.png);}
 .icon-nav-msg { width: 117px; height: 117px; background-image: url(../images/icons/nav-msg.png);}
+.icon-nav-news-small { width: 84px; height: 84px; background-image: url(../images/icons/nav-news-small.png);}
 .icon-nav-news { width: 117px; height: 117px; background-image: url(../images/icons/nav-news.png);}
 .icon-nav-plus { width: 46px; height: 46px; background-image: url(../images/icons/nav-plus.png);}
 .icon-nav-renew { width: 117px; height: 117px; background-image: url(../images/icons/nav-renew.png);}
@@ -21,7 +25,9 @@
 .icon-nav-reserve { width: 118px; height: 118px; background-image: url(../images/icons/nav-reserve.png);}
 .icon-nav-safety { width: 117px; height: 117px; background-image: url(../images/icons/nav-safety.png);}
 .icon-nav-service { width: 117px; height: 117px; background-image: url(../images/icons/nav-service.png);}
+.icon-nav-share-small { width: 85px; height: 84px; background-image: url(../images/icons/nav-share-small.png);}
 .icon-nav-share { width: 117px; height: 117px; background-image: url(../images/icons/nav-share.png);}
+.icon-nav-sign-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-sign-small.png);}
 .icon-nav-sign { width: 117px; height: 117px; background-image: url(../images/icons/nav-sign.png);}
 .icon-nav-testdrive { width: 117px; height: 117px; background-image: url(../images/icons/nav-testdrive.png);}
 .icon-nav-user { width: 117px; height: 117px; background-image: url(../images/icons/nav-user.png);}

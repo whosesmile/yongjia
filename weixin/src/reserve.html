@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <title>我的积分</title>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+  <body class="reserve bg-muted">
+    <section>
+      <div class="list border compact">
+        <div class="item active">
+          <div class="summary">
+            <span class="name">预约一般维修</span>
+            <span class="status text-danger">待确认</span>
+            <small class="text-muted pull-right">2015/05/18 22:09:23</small>
+          </div>
+          <div class="details">
+            <p>兰博基尼Landcruiser  4.0L</p>
+            <p>希望试驾</p>
+            <p>2015年5月28日 15:00</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="summary">
+            <span class="name">预约一般维修</span>
+            <span class="status text-danger">待确认</span>
+            <small class="text-muted pull-right">2015/05/18 22:09:23</small>
+          </div>
+          <div class="details">
+            <p>兰博基尼Landcruiser  4.0L</p>
+            <p>希望试驾</p>
+            <p>2015年5月28日 15:00</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="summary">
+            <span class="name">预约一般维修</span>
+            <span class="status text-danger">待确认</span>
+            <small class="text-muted pull-right">2015/05/18 22:09:23</small>
+          </div>
+          <div class="details">
+            <p>兰博基尼Landcruiser  4.0L</p>
+            <p>希望试驾</p>
+            <p>2015年5月28日 15:00</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="summary">
+            <span class="name">预约一般维修</span>
+            <span class="status text-success">已确认</span>
+            <small class="text-muted pull-right">2015/05/18 22:09:23</small>
+          </div>
+          <div class="details">
+            <p>兰博基尼Landcruiser  4.0L</p>
+            <p>希望试驾</p>
+            <p>2015年5月28日 15:00</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="summary">
+            <span class="name">预约一般维修</span>
+            <span class="status text-danger">待确认</span>
+            <small class="text-muted pull-right">2015/05/18 22:09:23</small>
+          </div>
+          <div class="details">
+            <p>兰博基尼Landcruiser  4.0L</p>
+            <p>希望试驾</p>
+            <p>2015年5月28日 15:00</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/base.js"></script>
+    <script>
+      $(function() {
+        $('.item').on('click', function() {
+          $(this).toggleClass('active').siblings().removeClass('active');
+        });
+      });
+    </script>
+</body>
+</html>
