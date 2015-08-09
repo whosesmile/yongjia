@@ -50,11 +50,11 @@ module.exports = function (grunt) {
         stripBanners: true
       },
       css: {
-        src: ['vendor/swiper/swiper.css', 'src/css/base.css', 'src/css/icons.css'],
+        src: ['src/css/base.css', 'src/css/icons.css'],
         dest: '<%= config.folder %>/css/base.css'
       },
       js: {
-        src: ['vendor/polyfill/**/*.js', 'vendor/zepto.js', 'vendor/fastclick.js', 'vendor/swig.js', 'vendor/swiper/swiper.js', 'vendor/bridge.js', 'vendor/base.js'],
+        src: ['vendor/polyfill/**/*.js', 'vendor/zepto.js', 'vendor/fastclick.js', 'vendor/swig.js', 'vendor/swipe.js', 'vendor/bridge.js', 'vendor/base.js'],
         dest: '<%= config.folder %>/js/base.js'
       }
     },
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
         tasks: ['px2rem']
       },
       combine: {
-        files: ['vendor/swiper/swiper.css', 'src/css/base.css', 'src/css/icons.css'],
+        files: ['src/css/base.css', 'src/css/icons.css'],
         tasks: ['concat:css', 'px2rem']
       },
       icons: {

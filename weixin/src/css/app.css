@@ -12,7 +12,7 @@ nav.blocks .menu.active .icon-checked { display: block; }
 nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .rewrite { overflow: hidden; }
 .rewrite * { line-height: 1.3rem !important; margin-bottom: 15px !important; font-size: 0.9rem !important; font-style: normal !important; font-family: inherit !important; }
-.rewrite img { display: block; width: 100%; margin-bottom: 15px; }
+.rewrite img { display: block !important; width: 100% !important; margin-bottom: 15px !important; }
 .rewrite a[href] { color: #007cff !important; }
 .rewrite p { margin-bottom: 20px; text-indent: 1rem !important; }
 
@@ -85,8 +85,10 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .signin .summary .col:last-child { border-right: none; line-height: 60px; }
 .signin footer .button .icon { margin-top: -8px }
 .signin .details { margin: 0 30px 30px; }
+.signin .details .panel { background: #fff; color: #666; border-top: 1px solid #ddd; border-left: 1px solid #ddd; }
+.signin .details .panel .box { height: 100px; border-bottom: 1px solid #ddd; border-right: 1px solid #ddd; padding: 10px; position: relative; float: left; width: 14.2857%; }
+.signin .details .panel .box em { position: absolute; right: 0; bottom: 6px; width: 60px; }
 .signin .details table { width: 100%; background: #fff; color: #666; }
-.signin .details table th { height: 55px; text-align: center; border: 1px solid #f89432; background-color: #f89432; vertical-align: middle; color: #fff; }
 .signin .details table td { height: 100px; border: 1px solid #ddd; padding: 10px; position: relative; }
 .signin .details table td em { position: absolute; right: 0; bottom: 6px; width: 60px; }
 
@@ -143,3 +145,15 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .reserve .name { display: inline-block; min-width: 280px; }
 .reserve .item .details { display: none; border-top: 1px solid #ddd; padding-top: 20px; padding-bottom: 20px; line-height: 1.2rem; }
 .reserve .item.active .details { display: block; }
+
+/* 车型参数 */
+.parameters .item.item-divider:not(.group) { background: #fff; text-align: center; }
+
+/* 编辑资料 */
+.settings .captcha { display: none; }
+
+/* 我的资料 */
+.information .setting-icon-left { margin-right: 25px; }
+.information .item.figure { height: 128.90625px; line-height: 128.90625px; }
+.information .item.figure .head { width: 93.75px; height: 93.75px; overflow: hidden; border-radius: 50%; margin-top: 17.578125px; }
+.information .item.figure .head img { display: block; width: 93.75px; margin: 0 auto; }

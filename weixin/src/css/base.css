@@ -13,7 +13,6 @@ button, input, optgroup, select, textarea { color: inherit; font: inherit; margi
 input:focus, textarea:focus, button:focus, select:focus { outline: none !important; }
 a { color: inherit; text-decoration: none; outline: 0; }
 a:active, a:hover, a:visited { color: inherit; outline: 0; }
-a.action:active { background-color: #f9f9f9; }
 img { vertical-align: middle; }
 select, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 select { background-color: #fff; }
@@ -33,6 +32,13 @@ input[type='checkbox'].small:before { border-width: 3px; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px #fff; }
 ::-webkit-scrollbar-thumb { background: rgba(0, 0, 0, 0.3); border-radius: 3px; }
+.swipe { overflow: hidden; visibility: hidden; position: relative; }
+.swipe-wrap { overflow: hidden; position: relative; }
+.swipe-wrap > a { float: left; display: block; width: 100%; position: relative; }
+.swipe-wrap img { display: block; max-width: 100%; width: auto; }
+.swipe-pagination { position: absolute; text-align: center; z-index: 10; bottom: 10px; width: 100%; }
+.swipe-pagination > a { display: inline-block; width: 0.35rem; height: 0.35rem; overflow: hidden; margin: 0 5px; border-radius: 100%; background: #000; opacity: 0.3; vertical-align: middle; }
+.swipe-pagination > a.active { opacity: 0.8; background: #f00; width: 0.4rem; height: 0.4rem; }
 .action { cursor: pointer; }
 .pull-right { float: right !important; }
 .pull-left { float: left !important; }

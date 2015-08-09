@@ -132,3 +132,65 @@ $(document).on('click', '.masklayer [data-dismiss],.masklayer .cancel', function
     Template.hide();
   }
 });
+
+// 需要注册会员
+$(document).on('click', '.login-required', function () {
+  Template.render('#loginRequired');
+});
+
+// 监听滚动回调
+(function (global) {
+
+  var fns = [];
+
+  // 给文档绑定滚动事件
+  var addLisener = function () {
+    // 滚动临界点
+    var cordon = 200;
+    // 防止重复请求
+    var loading = false;
+    var element = document.documentElement;
+    $(document).on('scroll', function (e) {
+      if (!loading) {
+        var range = Math.max(element.scrollHeight - element.offsetHeight, 0);
+        var distance = range - document.body.scrollTop;
+        if (range !== 0 && distance <= cordon) {
+          loading = true;
+          fireCallback().then(function (data) {
+            loading = false;
+            return data
+          });
+        }
+      }
+    });
+
+    addLisener = $.noop;
+  };
+
+  // 调用注册回调
+  var fireCallback = function () {
+    return new Promise(function (resolve, reject) {
+      var num = fns.length;
+      var list = [];
+      fns.forEach(function (fn) {
+        fn().then(function (res) {
+          list.push(res);
+          --num;
+          if (num === 0) {
+            resolve(list);
+          }
+        });
+      });
+    });
+
+  };
+
+  // 添加滚动事件
+  global.listenScroll = function (fn) {
+    if (typeof fn === 'function' && fns.indexOf(fn) === -1) {
+      fns.push(fn);
+      addLisener();
+    }
+  };
+
+})(window);
