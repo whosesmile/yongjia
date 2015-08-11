@@ -157,3 +157,6 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .information .item.figure { height: 128.90625px; line-height: 128.90625px; }
 .information .item.figure .head { width: 93.75px; height: 93.75px; overflow: hidden; border-radius: 50%; margin-top: 17.578125px; }
 .information .item.figure .head img { display: block; width: 93.75px; margin: 0 auto; }
+
+/* 我的车辆 */
+.mycards .item > span { display: inline-block; min-width: 165px; color: #333; text-align: right;}

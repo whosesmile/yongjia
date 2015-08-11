@@ -194,3 +194,95 @@ $(document).on('click', '.login-required', function () {
   };
 
 })(window);
+
+// 通用组件 选择车型
+(function (global) {
+
+  // 选择来源
+  var chooseSource = function (callback) {
+    var widget = Template.render('#commonSelect', {
+      title: '进口/国产',
+      key: 'id',
+      value: 'name',
+      list: [{
+        id: 0,
+        name: '国产'
+      }, {
+        id: 1,
+        name: '进口'
+      }]
+    });
+
+    widget.on('click', '.item', function () {
+      chooseCarType($(this).data().id, callback);
+    });
+  };
+
+  // 选择车型
+  global.chooseCarType = function (data, callback) {
+    $.get('/common/getCarType', {
+      importFlag: typeof data === 'object' ? data.id : data
+    }).then(function (res) {
+      if (res.code !== 200) {
+        return notice(res.data.message || '加载数据失败');
+      }
+
+      var widget = Template.render('#commonSelect', {
+        title: '选择车型',
+        key: 'id',
+        value: 'carTypeName',
+        list: res.data.list
+      });
+
+      widget.on('click', '.item', function () {
+        Template.remove();
+        if (callback) {
+          callback($(this).data());
+        }
+      });
+    });
+  };
+
+  // 选择款式
+  global.chooseCarStyle = function (data, callback) {
+    $.get('/common/getCarModel', {
+      id: typeof data === 'object' ? data.id : data
+    }).then(function (res) {
+      if (res.code !== 200) {
+        return notice(res.data.message || '加载数据失败');
+      }
+
+      var widget = Template.render('#commonSelect', {
+        title: '选择款式',
+        key: 'id',
+        value: 'carModelName',
+        list: res.data.list
+      });
+
+      widget.on('click', '.item', function () {
+        Template.remove();
+        if (callback) {
+          callback($(this).data());
+        }
+      });
+    });
+  };
+
+  global.chooseVehicle = function (options) {
+    if (options.typeId !== undefined) {
+      chooseCarStyle(options.typeId, options.callback);
+    }
+    else if (options.sourceId !== undefined) {
+      chooseCarType(options.sourceId, function (id) {
+        chooseCarStyle(id, options.callback);
+      });
+    }
+    else {
+      chooseSource(options.callback, function (id) {
+        chooseCarType(options.sourceId, function (id) {
+          chooseCarStyle(id, options.callback);
+        });
+      });
+    }
+  };
+})(window);

@@ -13,31 +13,47 @@
       <section class="has-footer">
         <div class="list">
           <div class="item item-divider">选择到店日期</div>
-          <div class="item item-input">
+          <label class="item item-input">
             <input type="date" placeholder="请选择日期" />
-          </div>
+          </label>
           <div class="item item-divider">选择到店时间</div>
-          <div class="item item-input">
+          <label class="item item-input">
             <input type="time" placeholder="请选择时间" />
-          </div>
+          </label>
           <div class="item item-divider">请选择车型</div>
           <div class="item item-oneline item-icon-right">
             Q50 2014款 Hybrid 豪华运动版
           </div>
           <div class="item item-divider">联系方式</div>
-          <div class="item item-input">
+          <label class="item item-input">
             <input type="tel" placeholder="请输入手机号" />
-          </div>
+          </label>
           <div class="item item-divider">请输入预约内容</div>
-          <div class="item item-textarea">
+          <label class="item item-textarea">
             <textarea maxlength="200"></textarea>
-          </div>
+          </label>
         </div>
       </section>
       <footer class="bar fixed noborder bar-button">
         <a class="button button-primary button-block">提交</a>
       </footer>
     </form>
+
+    <script id="commonSelect" type="text/swig-template">
+      <div class="masklayer">
+        <div class="popup">
+          <h3 class="title text-center">{{ title }}</h3>
+          <div class="panel">
+            <div class="list compact">
+              {% for item in list %}
+                <a class="item item-oneline item-icon-right action" data-id="{{ item[key] }}" data-name="{{ item[value] }}">{{ item[value] }}<i class="icon icon-more"></i></a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
     <script src="js/base.js"></script>
   </body>
 </html>

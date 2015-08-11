@@ -54,7 +54,7 @@ module.exports = function (grunt) {
         dest: '<%= config.folder %>/css/base.css'
       },
       js: {
-        src: ['vendor/polyfill/**/*.js', 'vendor/zepto.js', 'vendor/fastclick.js', 'vendor/swig.js', 'vendor/swipe.js', 'vendor/bridge.js', 'vendor/base.js'],
+        src: ['vendor/polyfill/**/*.js', 'vendor/zepto.js', 'vendor/fastclick.js', 'vendor/swig.js', 'vendor/swipe.js', 'vendor/base.js'],
         dest: '<%= config.folder %>/js/base.js'
       }
     },
@@ -118,6 +118,10 @@ module.exports = function (grunt) {
       icons: {
         files: ['src/images/icons/*.png'],
         tasks: ['autoicons', 'sync', 'concat:css', 'px2rem']
+      },
+      js: {
+        files: ['vendor/**/*.js'],
+        tasks: ['concat:js']
       }
     },
 

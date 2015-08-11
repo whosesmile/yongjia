@@ -14,7 +14,7 @@ input:focus, textarea:focus, button:focus, select:focus { outline: none !importa
 a { color: inherit; text-decoration: none; outline: 0; }
 a:active, a:hover, a:visited { color: inherit; outline: 0; }
 img { vertical-align: middle; }
-select, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+select, input::-webkit-outer-spin-button, input::-webkit-inner-spin-button, input[type="date"], input[type="time"] { -webkit-appearance: none; margin: 0; }
 select { background-color: #fff; }
 label.checkbox { line-height: 45px; }
 input[type='checkbox'] { width: 45px; height: 45px; margin: 0; line-height: normal; vertical-align: middle; position: relative; top: -5px; border: none; -webkit-appearance: none; appearance: none; background: transparent; }
@@ -106,7 +106,7 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .list-padding .item:last-child > span { border-bottom: none; }
 .item-divider { display: block; background: #efeff4; height: 90px; line-height: 90px; padding: 0 30px; border-bottom: 1px solid #ddd; color: #666; }
 .item-input { display: block; border-bottom: 1px solid #dadada; height: 100px; position: relative; background: #fff; padding: 0; overflow: hidden; }
-.item-input > input, .item-input > select { width: 100%; height: 100%; border: none; padding: 0 30px; font-size: 1rem; }
+.item-input > input, .item-input > select { height: 100%; border: none; padding: 0 30px; font-size: 1rem; width: 750px; }
 .item-textarea { height: 200px; line-height: 1.2rem; padding: 0; }
 .item-textarea > textarea { width: 100%; height: 100%; border: none; padding: 15px 30px; font-size: 1rem; }
 .item-input.has-label .label { display: block; width: 210.9375px; position: absolute; left: 0; padding-left: 30px; font-size: 1rem; line-height: 101.953125px; }
