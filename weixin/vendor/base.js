@@ -138,6 +138,11 @@ $(document).on('click', '.login-required', function () {
   Template.render('#loginRequired');
 });
 
+// 需要成为车主
+$(document).on('click', '.owner-required', function () {
+  Template.render('#ownerRequired');
+});
+
 // 监听滚动回调
 (function (global) {
 

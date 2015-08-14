@@ -94,8 +94,13 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 
 /* 车管家 */
 .keeper .banner { height: 300px; overflow: hidden; }
-.keeper .banner img { display: block; width: 100%; }
-.keeper .blocks { margin: 30px 0; }
+.keeper .banner img { height: 300px; }
+.keeper .item { height: 130px; line-height: 130px; }
+.keeper .item.reserve { cursor: pointer; }
+.keeper .item .icon:first-child { margin-right: 30px; margin-top: -8px; }
+.keeper .services .button { margin-top: 20px; }
+.keeper .popup { height: auto; }
+.keeper .popup a { cursor: pointer; }
 
 /* 专属顾问 */
 .advisers .members { background: #fff; margin-top: 30px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
@@ -159,4 +164,4 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .information .item.figure .head img { display: block; width: 93.75px; margin: 0 auto; }
 
 /* 我的车辆 */
-.mycards .item > span { display: inline-block; min-width: 165px; color: #333; text-align: right;}
+.mycards .item > span { display: inline-block; min-width: 165px; color: #333; text-align: right; }

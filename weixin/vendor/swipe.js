@@ -37,6 +37,7 @@
     var index = parseInt(options.startSlide, 10) || 0;
     var speed = options.speed || 300;
     options.continuous = options.continuous !== undefined ? options.continuous : true;
+    var pagination = null;
 
     function setup() {
 
@@ -88,6 +89,14 @@
 
       container.style.visibility = 'visible';
 
+      // 补充页码
+      if (options.pagination && length > 1) {
+        pagination = $('<div class="swipe-pagination"></div>').appendTo(container);
+        for (var i = 0; i < length; i++) {
+          pagination.append('<a></a>');
+        }
+        pagination.children().eq(0).addClass('active');
+      }
     }
 
     function prev() {
@@ -152,6 +161,12 @@
       }
 
       index = to;
+
+      // PAGER
+      if (pagination) {
+        pagination.children().removeClass('active').eq(index % pagination.children().length).addClass('active');
+      }
+
       offloadFn(options.callback && options.callback(index, slides[index]));
     }
 

@@ -32,8 +32,6 @@ $(function () {
     startSlide: 0,
     speed: 300,
     auto: 4000,
-    callback: function (index, elem) {
-      $(elem).closest('.swipe').find('.swipe-pagination a').removeClass('active').eq(index).addClass('active');
-    }
+    pagination: true
   });
 });
