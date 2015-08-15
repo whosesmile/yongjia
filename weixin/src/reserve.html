@@ -11,7 +11,7 @@
   <body class="reserve bg-muted">
     <section>
       <div class="list border compact">
-        <div class="item active">
+        <div class="item action">
           <div class="summary">
             <span class="name">预约一般维修</span>
             <span class="status text-danger">待确认</span>
@@ -74,6 +74,51 @@
       </div>
     </section>
     <script src="js/base.js"></script>
+    <script id="reserve" type="text/swig-template">
+    {% for item in list %}
+      <div class="item">
+        <div class="summary">
+          <span class="name">{{ item.type|reserveType }}</span>
+          {% if item.status === 1 %}
+            <span class="status text-danger">{{ item.status|reserveStatus }}</span>
+          {% elif item.status === 2 %}
+            <span class="status">{{ item.status|reserveStatus }}</span>
+          {% elif item.status === 3 %}
+            <span class="status text-success">{{ item.status|reserveStatus }}</span>
+          {% elif item.status === 4 %}
+            <span class="status text-muted">{{ item.status|reserveStatus }}</span>
+          {% endif %}
+          {% if item.arriveTime %}
+            <small class="text-muted pull-right">{{ item.arriveTime|date('Y-m-d H:i') }}</small>
+          {% else %}
+            <small class="text-muted pull-right">{{ item.appointTime|date('Y-m-d H:i') }}</small>
+          {% endif %}
+        </div>
+        <div class="details">
+          {% if item.type === 1%}
+            <p>车型：{{ item.carType }}</p>
+            <p>联系电话： {{ item.connectPhone }}</p>
+            <p>问题描述：{{ item.problemDesc }}</p>
+          {% elif item.type === 2%}
+            <p>车型：{{ item.carType }}</p>
+            <p>联系电话： {{ item.connectPhone }}</p>
+            <p>当前里程：{{ item.kilo }}/万公里</p>
+          {% elif item.type === 3%}
+            <p>车型：{{ item.carType }}</p>
+            <p>联系电话： {{ item.connectPhone }}</p>
+            <p>是否试驾：{{ item.isTestDrive|isTestDrive }}</p>
+          {% elif item.type === 4%}
+            <p>车型：{{ item.carType }}</p>
+            <p>联系电话： {{ item.connectPhone }}</p>
+            <p>当前里程：{{ item.kilo }}/万公里</p>
+          {% elif item.type === 5%}
+            <p>联系电话： {{ item.connectPhone }}</p>
+            <p>预约内容：{{ item.appointContent }}</p>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+    </script>
     <script>
       $(function() {
         $('.item').on('click', function() {

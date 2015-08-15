@@ -200,8 +200,8 @@ footer.bar nav a:active span, footer.bar nav a.active span { color: #f89432; }
 .modal { background: #fff; border-radius: 15px; color: #000; width: auto !important; height: 238px; position: absolute; left: 100px; right: 100px; top: 50%; margin: -110px 0 0 0 !important; }
 
 /* 支持弹性布局的手机正常处理 */
-@supports (flex:1) or (-webkit-flex:1)or (-webkit-box-flex:1) {
-  .modal { width: 100% !important; height: auto; position: static; margin: auto 100px !important; }
+@supports ((flex:1) or (-webkit-flex:1) or (-webkit-box-flex:1)) {
+  .modal { width: 100% !important; height: auto !important; position: static; margin: auto 100px !important; }
 }
 .modal .wrap { padding: 40px; }
 .modal .title { margin-bottom: 20px; font-weight: normal; }
