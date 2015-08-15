@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+    <title>购车计划</title>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+  </head>
+  <body class="plan bg-muted">
+    <form method="post" onsubmit="return false;">
+      <section class="has-footer">
+        <div class="list">
+          <div class="item item-divider">联系方式</div>
+          <div class="item item-input">
+            <input type="tel" name="connectMobile" placeholder="您的联系电话" value="${wxuser.mobile}" />
+          </div>
+          <div class="item item-divider">选择车型</div>
+          <div class="item item-oneline item-icon-right action choose">
+            <span>尚未选择</span><i class="icon icon-more"></i>
+          </div>
+          <div class="item item-divider">第几次购车</div>
+          <div class="item item-input">
+            <select name="buyType">
+              <option value="0">首次</option>
+              <option value="1">增购</option>
+              <option value="2">换购</option>
+            </select>
+          </div>
+          <div class="item item-divider">购车用途</div>
+          <div class="item item-input">
+            <select name="buyFor">
+              <option value="0">家用</option>
+              <option value="1">公司</option>
+              <option value="2">其他</option>
+            </select>
+          </div>
+          <div class="item item-divider">购车预算 <small class="text-muted">(万元)</small></div>
+          <div class="item item-input">
+            <input type="text" name="buyBudget" placeholder="您的购车预算" required />
+          </div>
+          <div class="item item-divider">购车时间</div>
+          <div class="item item-input">
+            <input type="date" name="buyDate" placeholder="您的购车时间" required />
+          </div>
+          <div class="item item-divider">付款方式</div>
+          <div class="item item-input">
+            <select name="payType">
+              <option value="0">全款</option>
+              <option value="1">贷款</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <footer class="bar fixed noborder bar-button">
+        <a class="button button-primary button-block">提交</a>
+      </footer>
+    </form>
+    <script src="js/base.js"></script>
+    <script src="js/plans.js"></script>
+  </body>
+</html>

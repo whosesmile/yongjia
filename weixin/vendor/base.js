@@ -224,7 +224,7 @@ $(document).on('click', '.owner-required', function () {
   };
 
   // 选择车型
-  global.chooseCarType = function (data, callback) {
+  global.chooseCarType = function (data, callback, keep) {
     $.get('/common/getCarType', {
       importFlag: typeof data === 'object' ? data.id : data
     }).then(function (res) {
@@ -240,7 +240,9 @@ $(document).on('click', '.owner-required', function () {
       });
 
       widget.on('click', '.item', function () {
-        Template.remove();
+        if (keep !== true) {
+          Template.remove();
+        }
         if (callback) {
           callback($(this).data());
         }
@@ -249,7 +251,7 @@ $(document).on('click', '.owner-required', function () {
   };
 
   // 选择款式
-  global.chooseCarStyle = function (data, callback) {
+  global.chooseCarStyle = function (data, callback, keep) {
     $.get('/common/getCarModel', {
       id: typeof data === 'object' ? data.id : data
     }).then(function (res) {
@@ -265,7 +267,9 @@ $(document).on('click', '.owner-required', function () {
       });
 
       widget.on('click', '.item', function () {
-        Template.remove();
+        if (keep !== true) {
+          Template.remove();
+        }
         if (callback) {
           callback($(this).data());
         }

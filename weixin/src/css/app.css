@@ -165,3 +165,10 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 
 /* 我的车辆 */
 .mycards .item > span { display: inline-block; min-width: 165px; color: #333; text-align: right; }
+
+/* 购车计划 */
+.plans .item { height: auto; }
+.plans .item .title { height: 96px; line-height: 95px; border-bottom: 1px dashed #ddd; }
+.plans .item .summary { line-height: 42px; padding-top: 25px; padding-bottom: 25px; position: relative; }
+.plans .item .summary .icon-detail { position: absolute; right: 0; top: 50%; margin-top: -14px; }
+.plans .list.padding .item:not(.item-divider) { border-left: 1px solid #ddd; border-right: 1px solid #ddd; margin-bottom: .6095238095238096rem; border-top: 1px solid #ddd; }
