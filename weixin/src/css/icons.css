@@ -9,6 +9,7 @@
 .icon-nav-assess { width: 117px; height: 117px; background-image: url(../images/icons/nav-assess.png);}
 .icon-nav-buy-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-buy-small.png);}
 .icon-nav-buy { width: 117px; height: 117px; background-image: url(../images/icons/nav-buy.png);}
+.icon-nav-car-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-car-small.png);}
 .icon-nav-car { width: 117px; height: 117px; background-image: url(../images/icons/nav-car.png);}
 .icon-nav-contrast { width: 117px; height: 117px; background-image: url(../images/icons/nav-contrast.png);}
 .icon-nav-gift-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-gift-small.png);}
@@ -27,12 +28,14 @@
 .icon-nav-reserve-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-reserve-small.png);}
 .icon-nav-reserve { width: 118px; height: 118px; background-image: url(../images/icons/nav-reserve.png);}
 .icon-nav-safety { width: 117px; height: 117px; background-image: url(../images/icons/nav-safety.png);}
+.icon-nav-service-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-service-small.png);}
 .icon-nav-service { width: 117px; height: 117px; background-image: url(../images/icons/nav-service.png);}
 .icon-nav-share-small { width: 85px; height: 84px; background-image: url(../images/icons/nav-share-small.png);}
 .icon-nav-share { width: 117px; height: 117px; background-image: url(../images/icons/nav-share.png);}
 .icon-nav-sign-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-sign-small.png);}
 .icon-nav-sign { width: 117px; height: 117px; background-image: url(../images/icons/nav-sign.png);}
 .icon-nav-testdrive { width: 117px; height: 117px; background-image: url(../images/icons/nav-testdrive.png);}
+.icon-nav-user-small { width: 83px; height: 83px; background-image: url(../images/icons/nav-user-small.png);}
 .icon-nav-user { width: 117px; height: 117px; background-image: url(../images/icons/nav-user.png);}
 .icon-point { width: 35px; height: 33px; background-image: url(../images/icons/point.png);}
 .icon-profile-about { width: 50px; height: 50px; background-image: url(../images/icons/profile-about.png);}
