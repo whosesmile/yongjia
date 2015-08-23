@@ -157,6 +157,7 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 
 /* 编辑资料 */
 .settings .captcha { display: none; }
+.settings .captcha .timer { text-align: center; border: 1px solid #017fff; border-radius: 5px; min-width: 155px; line-height: 50px; margin-top: 18px; background-color: #fff; color: #017fff !important; pointer-events: none; }
 
 /* 我的资料 */
 .information .setting-icon-left { margin-right: 25px; }
