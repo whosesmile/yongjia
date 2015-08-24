@@ -91,7 +91,8 @@ app.filter('status', function () {
 // 判断性别
 app.filter('gender', function () {
   return function (status) {
-    return Number(status) === 0 ? '靓女' : '靓仔';
+    var genders = ['保密', '靓仔', '靓女'];
+    return genders[status]
   };
 });
 

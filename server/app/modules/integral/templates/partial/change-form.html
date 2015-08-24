@@ -20,6 +20,7 @@
           <option value="">请选择</option>
         </select>
       </div>
+      <div ng-if="entity.actionContent &amp;&amp; entity.actionContent !== '预约看车' &amp;&amp; entity.actionContent !== '其他'" class="col-sm-offset-3 col-sm-7 text-danger" style="margin-top:10px;">* 只有车主才能针对这项服务添加积分</div>
     </div>
     <div class="form-group">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>赠送积分：</label>

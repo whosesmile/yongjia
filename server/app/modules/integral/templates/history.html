@@ -20,7 +20,8 @@
       <th>事件</th>
       <th>内容</th>
       <th>积分变化</th>
-      <th>更新时间</th>
+      <th>变更时间</th>
+      <th>操作人</th>
       <th class="text-right">备注</th>
     </tr>
   </thead>
@@ -36,7 +37,7 @@
       </td>
     </tr>
     <tr ng-repeat="item in list">
-      <td><img ng-src="{{ item.headimgurl }}" width="30" height="30" /></td>
+      <td><img ng-src="{{ item.headImgurl }}" width="30" height="30" /></td>
       <td>{{ item.name }}</td>
       <td>{{ item.mobile }}</td>
       <td>{{ item.sex|gender }}</td>
@@ -45,6 +46,7 @@
       <td>{{ item.actionContent }}</td>
       <td>+{{ item.point }}</td>
       <td>{{ item.createAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
+      <td>{{ item.createByName }}</td>
       <td class="text-right">{{ item.remark }}</td>
     </tr>
   </tbody>

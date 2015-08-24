@@ -111,7 +111,7 @@ $(function () {
       return false;
     }
     if (form.carType.value === '') {
-      notice('请选择您需要维修的车辆');
+      notice('请选择您需要预约的车辆');
       return false;
     }
     if (form.kilo.value === '') {
@@ -234,7 +234,7 @@ $(function () {
       return false;
     }
     if (carType === null) {
-      notice('请选择您需要维修的车辆');
+      notice('请选择您需要预约的车辆');
       return false;
     }
     if (form.connectPhone.value === '') {

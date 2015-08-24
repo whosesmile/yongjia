@@ -72,10 +72,13 @@ integralModule.controller('signinController', function ($scope, $state, $modal, 
   });
 
   $scope.setConfig = function (e, times) {
-    var point = e.target.value;
+    var point = e.target.value || 0;
     signinService.setConfig($scope.year + '-' + ($scope.month + 1), times, point).then(function (data) {
+      $scope.config[times - 1].point = point;
+      e.target.value = point;
       growl.addSuccessMessage('签到积分设置成功');
     }, function (rej) {
+      e.target.value = $scope.config[times - 1].point;
       growl.addErrorMessage(rej.message || '签到积分设置失败');
     });
   };
@@ -160,6 +163,7 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
           };
 
           scope.confirm = function () {
+            scope.entity.processing = true;
             exchangeService.exchange(scope.entity).then(function (data) {
               scope.$close();
               $scope.pageNo = 1;
@@ -167,6 +171,8 @@ integralModule.controller('exchangeController', function ($scope, $state, $modal
               growl.addSuccessMessage(scope.title + '成功！');
             }, function (rej) {
               growl.addErrorMessage(rej.message || scope.title + '失败！');
+            }).finally(function () {
+              scope.entity.processing = false;
             });
           };
         }
@@ -209,6 +215,7 @@ integralModule.controller('historyController', function ($scope, $state, $modal,
           };
 
           scope.confirm = function () {
+            scope.entity.processing = true;
             historyService.addPoint(scope.entity).then(function (data) {
               scope.$close();
               $scope.pageNo = 1;
@@ -216,6 +223,8 @@ integralModule.controller('historyController', function ($scope, $state, $modal,
               growl.addSuccessMessage(scope.title + '成功！');
             }, function (rej) {
               growl.addErrorMessage(rej.message || scope.title + '失败！');
+            }).finally(function () {
+              scope.entity.processing = false;
             });
           };
         }

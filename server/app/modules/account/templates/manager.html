@@ -33,6 +33,7 @@
       <th>手机号</th>
       <th>账号</th>
       <th>角色</th>
+      <th>更新时间</th>
       <th>状态</th>
       <th class="text-right" ng-if="member.roleId === 1 || member.roleId === 2">操作</th>
     </tr>
@@ -54,6 +55,7 @@
       <td>{{ item.mobile }}</td>
       <td>{{ item.account }}</td>
       <td>{{ item.roleId|memberRole }}</td>
+      <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td ng-class="{'text-danger': item.status}">{{ item.status|memberStatus }}</td>
       <td class="actions text-right" ng-if="member.roleId === 1 ||  member.roleId === 2">
         <a href="" class="text-danger" ng-if="item.status === 0" ng-click="toggle(item)">停用</a>

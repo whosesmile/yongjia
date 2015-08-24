@@ -20,6 +20,7 @@
       <th>兑换类型</th>
       <th>兑换货品</th>
       <th>扣除积分</th>
+      <th>操作人</th>
       <th class="text-right">兑换时间</th>
     </tr>
   </thead>
@@ -35,7 +36,7 @@
       </td>
     </tr>
     <tr ng-repeat="item in list">
-      <td><img ng-src="{{ item.headimgurl }}" width="30" height="30" /></td>
+      <td><img ng-src="{{ item.headImgurl }}" width="30" height="30" /></td>
       <td>{{ item.name }}</td>
       <td>{{ item.mobile }}</td>
       <td>{{ item.sex|gender }}</td>
@@ -43,6 +44,7 @@
       <td>{{ item.action }}</td>
       <td>{{ item.actionContent }}</td>
       <td>{{ item.point }}</td>
+      <td>{{ item.createByName }}</td>
       <td class="text-right">{{ item.createAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
     </tr>
   </tbody>

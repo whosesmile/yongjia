@@ -34,6 +34,7 @@
       <th>关注状态</th>
       <th>绑定状态</th>
       <th>当前积分</th>
+      <th>更新时间</th>
       <th class="text-right">操作</th>
     </tr>
   </thead>
@@ -53,12 +54,14 @@
       <td>{{ item.nickname }}</td>
       <td>{{ item.name }}</td>      
       <td>{{ item.mobile }}</td>
-      <td>{{ item.sex|gender }}</td>
+      <td ng-if="item.memberSex === null">{{ item.sex|gender }}</td>
+      <td ng-if="item.memberSex !== null">{{ item.memberSex|gender }}</td>
       <td ng-if="!item.id || item.status != 2"><a class="text-muted">查看</a></td>      
       <td ng-if="item.id &amp;&amp; item.status == 2"><a href="" ng-click="getMemberCar(item)">查看</a></td>      
       <td>{{ item.subscribe|memberFollow }}</td>
       <td>{{ item.id|memberBind:item.status }}</td>
       <td>{{ item.point || 0 }}</td>
+      <td>{{ item.updateAt|date:'yyyy-MM-dd HH:mm:ss' }}</td>
       <td class="text-right" ng-if="item.valiFlag != 1"><a class="text-muted">验证</a></td>
       <td class="text-right" ng-if="item.valiFlag == 1"><a href="" ng-click="checkMemberCar(item)">验证</a></td>
     </tr>

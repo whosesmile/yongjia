@@ -14,7 +14,8 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .rewrite * { line-height: 1.3rem !important; margin-bottom: 15px !important; font-size: 0.9rem !important; font-style: normal !important; font-family: inherit !important; }
 .rewrite img { display: block !important; width: 100% !important; margin-bottom: 15px !important; }
 .rewrite a[href] { color: #007cff !important; }
-.rewrite p { margin-bottom: 20px; text-indent: 1rem !important; }
+
+/*.rewrite p { margin-bottom: 20px; text-indent: 1rem !important; }*/
 
 /* 个人主页 */
 .profile .banner { position: relative; padding-top: 35px; height: 300px; background: transparent url(../images/profile/bg.jpg) 0 0 no-repeat; background-size: cover; }
@@ -73,6 +74,7 @@ nav.blocks .menu .icon-nav-plus { margin-top: 52px; }
 .notices .item small { display: block; height: 60px; overflow: hidden; line-height: 1.2; }
 
 /* 消息详情 */
+.notice .padding h2 { font-size: 1.2rem; font-weight: bold; }
 .notice h4 { margin-top: 10px; }
 .notice .banner { margin-top: 20px; }
 .notice img { display: block; width: 100%; }

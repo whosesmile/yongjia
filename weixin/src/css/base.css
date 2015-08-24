@@ -121,8 +121,8 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .item.item-checkbox { position: relative; padding-left: 117.1875px; }
 .item.item-checkbox .checkbox { position: absolute; top: 0; bottom: 0; left: 0; width: 117.1875px; }
 .item.item-checkbox .checkbox input[type="checkbox"] { display: block; position: absolute; left: 50%; top: 50%; margin: -22.265625px 0 0 -22.265625px; }
-.item.item-thumbnail { padding-left: 230px; height: 140px; }
-.item.item-thumbnail .thumbnail { position: absolute; top: 50%; left: 30px; width: 185px; height: 140px; margin-top: -70px; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; }
+.item.item-thumbnail { padding-left: 230px; height: 160px; }
+.item.item-thumbnail .thumbnail { position: absolute; top: 50%; left: 30px; width: 185px; height: 120px; margin-top: -60px; overflow: hidden; display: -webkit-box; display: -webkit-flex; display: flex; }
 .item.item-thumbnail .thumbnail img { width: 100%; display: block; margin: auto; }
 .item.item-thumbnail .information h3 { margin-top: 35px; margin-bottom: 8px; }
 .item.item-checkbox.item-thumbnail { padding-left: 328px; }
@@ -136,7 +136,7 @@ input[type='checkbox'].small:before { border-width: 3px; }
 .button-outline { background-color: #fff; padding: 0 40; }
 .button-warning.button-outline { color: #fe6f21 !important; border: 1px solid #fe6f21; background: #fff9f6; }
 .button-primary { color: #fff !important; background-color: #017fff; }
-.button-primary.button-outline { color: #017fff !important; border: 1px solid #017fff; background: #eef3f8; }
+.button-primary.button-outline { color: #017fff !important; border: 1px solid #79b9fc; background: #fff; }
 .button-primary:active { box-shadow: 0 0 3px #333; background-color: #066cd4; }
 .button-success { color: #fff !important; background-color: #77b668; }
 .button-success:active { box-shadow: 0 0 3px #333; background-color: #5fcb45; }

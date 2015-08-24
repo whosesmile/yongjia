@@ -12,8 +12,8 @@
       <select class="form-control" ng-model="month" ng-options="item as item + 1 + '月' for item in monthes"></select>
     </div>
   </div>
-  <div class="item" ng-repeat="item in days">
-    <span>{{ item }}次</span>
-    <input type="text" value="{{ config[$index].point }}" class="text-center" ng-blur="setConfig($event, item)" max-length="3" />
+  <div class="item" ng-repeat="item in config">
+    <span>{{ $index + 1 }}次</span>
+    <input type="text" value="{{ item.point }}" class="text-center" ng-blur="setConfig($event, $index + 1)" max-length="3" />
   </div>
 </div>

@@ -43,6 +43,7 @@
       <div class="col-sm-7">
         <div class="upload">
           <a class="btn btn-success">+上传头图</a>
+          <span class="text-muted">( 建议尺寸：185 * 120 )</span>
           <input type="file" class="file" ng-file-select="upload($files)" accept="image/*" />
         </div>
       </div>
@@ -53,6 +54,7 @@
     <div class="form-group">
       <label class="control-label text-normal text-nowrap col-sm-3"><i class="text-danger">*</i>设置图库：</label>
       <div class="col-sm-7">
+        <p class="text-muted">( 建议尺寸：750 * 420 )</p>
         <div class="figure-group" ng-repeat="item in [1,2,3,4,5,6,7,8]">
           <div class="item upload">
             <i class="glyphicon glyphicon-plus"></i>

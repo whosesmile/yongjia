@@ -129,6 +129,8 @@ $(function () {
       return notice('请输入车牌号');
     }
 
+    $('footer button').prop('disabled', true).html('正在提交');
+
     $.post('/wx/member/addCar', {
       typeName: type.name,
       modelName: style.name,
@@ -136,11 +138,13 @@ $(function () {
       vinNo: form.vinNo.value
     }).then(function (res) {
       if (res.code === 200) {
-
+        location.href = '/wx/view/myCars';
       }
       else {
         notice(res.data.message || '添加车辆失败');
       }
+
+      $('footer button').prop('disabled', false).html('提交');
     });
 
     return false;
