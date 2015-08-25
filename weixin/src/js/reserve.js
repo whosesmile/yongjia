@@ -194,7 +194,15 @@ $(function () {
 // 预约看车
 $(function () {
 
-  var carType = null;
+  var carType = location.search.replace('?', '').split('&').filter(function (item) {
+    return item !== '';
+  }).map(function (item) {
+    var duple = item.split('=');
+    return {
+      id: null,
+      name: decodeURIComponent(duple[1])
+    };
+  })[0];
 
   if (!$('body').is('.kanche')) {
     return false;
