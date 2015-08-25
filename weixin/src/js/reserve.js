@@ -207,6 +207,11 @@ $(function () {
   if (!$('body').is('.kanche')) {
     return false;
   }
+
+  if (carType) {
+    $('.item.choose').html(carType.name);
+  }
+
   $('.item.choose').on('click', function () {
     var item = $(this);
     var widget = Template.render('#commonSelect', {
